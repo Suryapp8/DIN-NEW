@@ -1,13 +1,15 @@
 import React from "react";
 import logo from "../images/din-logo.png";
 import "../styles/navbar.css";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <>
       <nav>
         <div className="logo-cont">
-          <img className="logo-img" src={logo} alt="logo" />
+          <Link to="/">
+            <img className="logo-img" src={logo} alt="logo" />
+          </Link>
         </div>
 
         <ul className="nav-links">

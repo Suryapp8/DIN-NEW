@@ -7,7 +7,7 @@ import gaia from "../images/gaia.png";
 import dustbin from "../images/dustbin.png";
 import tree from "../images/tree.png";
 import recycle from "../images/recycle.png";
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,7 +17,9 @@ function Home() {
           <h3 className="line-1">STAY CLEAN</h3>
           <h3 className="line-2">Go GREEN</h3>
           <p className="line-3">Do You Have Waste Around You?</p>
-          <button className="din-btn">DUMP IT NOW</button>
+          <Link to="/orderpage" className="din-btn">
+            DUMP IT NOW ?
+          </Link>
         </div>
 
         <div className="div-1">
@@ -135,8 +137,27 @@ function Home() {
         </div>
       </div>
 
+      <div className="footer">
+        <div className="footer-left">
+          <h3>hello</h3>
+        </div>
 
-      
+        <div className="footer-right">
+          <h3>JOIN US</h3>
+          <p>HEHjckjanjnjlnlenflnelajnflnfljfnjesfnf</p>
+          <form>
+            <div className="name-input">
+              <input type="name" placeholder="Name" />
+              <input type="email" placeholder="Email" />
+            </div>
+
+            <div className="contact-input">
+              <input type="number" placeholder="Contact" />
+              <button>Join us</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
