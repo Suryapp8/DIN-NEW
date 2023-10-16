@@ -1,0 +1,51 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/blurred.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    width: 100%;
+    margin-bottom: 2rem;
+    
+
+}
+
+.footer-left{
+    height: 45vh;
+    width: 30%;
+    background-color: rgb(209, 154, 27);
+    
+}
+
+.footer-right{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    height: 32vh;
+    padding-left: 2rem;
+}
+
+.name-input > input{
+    color: grey;
+    border: 1px solid grey;
+    margin-right: 1rem;
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
+.contact-input > input{
+    color: grey;
+    border: 1px solid grey;
+    margin-right: 1rem;
+    width: 40%;
+}
+
+.contact-input > button{
+    width: 40%;
+    background-color: rgb(209, 154, 27);
+    border: none;
+    color: white;
+}

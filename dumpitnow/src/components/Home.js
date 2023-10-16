@@ -2,7 +2,11 @@ import React from "react";
 import "../styles/home.css";
 import treeman from "../images/treeman.jpg";
 import plant from "../images/plant.jpg";
+import recycleLogo from "../images/recycleLogo.jpg";
 import gaia from "../images/gaia.png";
+import dustbin from "../images/dustbin.png";
+import tree from "../images/tree.png";
+import recycle from "../images/recycle.png";
 
 
 function Home() {
@@ -48,52 +52,91 @@ function Home() {
       <div className="slides">
         <div className="box-1">
           <div className="img-div">
-          <img src={gaia} alt="img" />
+            <img src={gaia} alt="img" />
           </div>
           <div className="curve-div">
-          <p>We Serve To Create Awareness And Let You Be The Curator Of Our Mother Earth.</p>
+            <p>
+              We Serve To Create Awareness And Let You Be The Curator Of Our
+              Mother Earth.
+            </p>
           </div>
-        </div> 
+        </div>
         <div className="box-1">
-        <div className="img-div">
-          <img src={gaia} alt="img" />
+          <div className="img-div">
+            <img src={gaia} alt="img" />
           </div>
           <div className="curve-div">
-          <p>We Serve To Create Awareness And Let You Be The Curator Of Our Mother Earth.</p>
-          </div>        </div>
+            <p>
+              We Serve To Create Awareness And Let You Be The Curator Of Our
+              Mother Earth.
+            </p>
+          </div>{" "}
+        </div>
         <div className="box-1">
-        <div className="img-div">
-          <img src={gaia} alt="img" />
+          <div className="img-div">
+            <img src={gaia} alt="img" />
           </div>
           <div className="curve-div">
-          <p>We Serve To Create Awareness And Let You Be The Curator Of Our Mother Earth.</p>
-          </div>        </div>
+            <p>
+              We Serve To Create Awareness And Let You Be The Curator Of Our
+              Mother Earth.
+            </p>
+          </div>{" "}
+        </div>
         <div className="box-1">
-        <div className="img-div">
-          <img src={gaia} alt="img" />
+          <div className="img-div">
+            <img src={gaia} alt="img" />
           </div>
           <div className="curve-div">
-          <p>We Serve To Create Awareness And Let You Be The Curator Of Our Mother Earth.</p>
-          </div>        
+            <p>
+              We Serve To Create Awareness And Let You Be The Curator Of Our
+              Mother Earth.
+            </p>
           </div>
+        </div>
+      </div>
 
+      <div className="valuate-div">
+        <div className="plant-img">
+          <img src={plant} alt="plant" />
+        </div>
 
-         
-        
+        <div className="valuate-para">
+          <h3>
+            <span style={{ color: "rgb(209, 154, 27)" }}>HOW</span> WE VALUATE
+          </h3>
+          <p>hehehheheheheheheh</p>
+        </div>
+      </div>
 
+      <div className="supplies-div">
+        <div className="left-div">
+          <h3>
+            <span style={{ color: "rgb(209, 154, 27)" }}>PLANTS</span> AND
+            SUPPLIES
+          </h3>
+          <p>blah blah blah blah blah</p>
+          <div className="dust">
+            <img src={dustbin} alt="" />
+            <p>blah blah blah</p>
+          </div>
+          <div className="dust">
+            <img src={recycle} alt="" />
+            <p>blah blah blah</p>
+          </div>
+          <div className="dust">
+            <img src={tree} alt="" />
+            <p>blah blah blah</p>
+          </div>
+        </div>
+
+        <div className="right-div">
+          <img src={recycleLogo} alt="recycle" />
+        </div>
       </div>
 
 
-      <div className="valuate-div">
-            <div className="plant-img">
-            <img src={plant} alt="plant" />
-            </div>
-
-            <div className="valuate-para">
-              <h3><span style={{color: "rgb(209, 154, 27)"}}>HOW</span> WE VALUATE</h3>
-              <p>hehehheheheheheheh</p>
-            </div>
-          </div>
+      
     </>
   );
 }

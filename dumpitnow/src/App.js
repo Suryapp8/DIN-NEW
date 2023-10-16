@@ -1,7 +1,9 @@
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import "./styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
