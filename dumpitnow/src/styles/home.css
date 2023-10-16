@@ -1,0 +1,196 @@
+.home {
+  height: 60vh;
+  background-color: green;
+  background-image: url("../images/home.jpg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  margin: 0;
+  background-size: 80% 100%;
+  background-color: rgb(45, 61, 12);
+}
+
+.home-cont {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: flex-start;
+  padding-top: 20vh;
+  margin-left: 10%;
+}
+
+.line-1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.line-2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.line-3 {
+  font-weight: 500;
+}
+
+.din-btn {
+  font-size: 0.8rem;
+  color: rgb(45, 61, 12);
+  border: none;
+  font-weight: bolder;
+}
+
+.div-1 {
+  background-color: rgb(209, 154, 27);
+  height: 15vh;
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  top: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.div-2 {
+  height: 34vh;
+  width: 60%;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+.img-cont > img {
+  height: 38vh;
+  width: 90%;
+  margin-left: 1rem;
+}
+
+.about-div {
+  width: 60%;
+  font-size: 0.8rem;
+}
+
+.learn-btn {
+  background-color: rgb(209, 154, 27);
+  color: white;
+  border: none;
+}
+
+.about {
+  border-top: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      rgb(209, 154, 27) 15%,
+      transparent 30%
+    )
+    100% 1;
+  color: green;
+}
+
+.services-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.services-cont > h3 {
+  border-top: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      rgb(209, 154, 27) 80%,
+      transparent 100%
+    )
+    100% 1;
+  color: green;
+}
+
+.slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.box-1 {
+  height: 30vh;
+  width: 14%;
+  border: 1px solid grey;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  background-color: rgb(209, 154, 27);
+}
+.img-div > img {
+  height: 6rem;
+  width: 6rem;
+  padding-top: 0.8rem;
+  
+}
+
+.img-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  background-color: white;
+}
+
+.curve-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+
+.valuate-div{
+  margin: auto;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plant-img{
+  width: 50%;;
+}
+
+.plant-img > img{
+  height: 40vh;
+  width: 100%;
+}
+
+.valuate-para{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40vh;
+  width: 50%;
+}
+
+.valuate-para > h3{
+  border-top: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      rgb(209, 154, 27) 60%,
+      transparent 100%
+    )
+    100% 1;
+}
