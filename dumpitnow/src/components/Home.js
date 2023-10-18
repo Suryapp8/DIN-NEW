@@ -151,7 +151,7 @@ function Home() {
 
         <div className="footer-right">
           <h3>JOIN US</h3>
-          <p>dgrgrgdrgdrgdrglenflnelajnflnfljfnjesfnf</p>
+          <p>nelajnflnfljfnjesfnf</p>
           <form onSubmit={handleSubmit}>
             <div className="name-input">
               <input type="name" placeholder="Name" required />
