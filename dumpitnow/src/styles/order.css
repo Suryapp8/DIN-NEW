@@ -26,19 +26,20 @@
   }
   
   .name h3 {
-    color: brown;
+    color: #44ba00;
     font-size: small;
     margin-left: 3rem;
   }
   
   .name > input {
-    height: 2rem;
+    height: 1.5rem;
     border: none;
     color: brown;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #44ba00 ;
     font-size: small;
     margin-left: 2rem;
     font-family: "Bruno Ace SC", cursi;
+    
   }
   
   .name > input:focus {
@@ -53,7 +54,7 @@
   
   .schedule {
     height: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-transform: capitalize;
     font-family: "Bruno Ace SC", cursi;
     font-size: 1rem;
@@ -62,6 +63,8 @@
   
   .schedule:hover {
     cursor: pointer;
+    background-color: #44ba00;
+    color: white;
   }
   
   @media (max-width: 768px) {
@@ -70,18 +73,19 @@
     }
   
     .name h3 {
-      font-size: 0.6rem;
+      font-size: 0.4rem;
       margin-left: 0.5rem;
     }
   
     .name > input {
       width: 80%;
-      margin-left: 0.2rem;
-      font-size: 0.7rem;
+      margin-left: 0.5rem;
+      font-size: 0.4rem;
+      height: 1rem;
     }
   
     .schedule {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
       font-weight: bolder;
     }
     .orderpage {
@@ -91,6 +95,7 @@
   
   .services-container {
     width: 50vw;
+    
   }
   
   .services-about {
@@ -123,5 +128,6 @@
     }
     .services-container {
       width: 50vh;
+      
     }
   }
