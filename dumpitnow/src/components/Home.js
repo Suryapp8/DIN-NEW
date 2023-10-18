@@ -9,7 +9,14 @@ import tree from "../images/tree.png";
 import recycle from "../images/recycle.png";
 import { Link } from "react-router-dom";
 
+
+
 function Home() {
+
+  function handleSubmit(){
+  
+  }
+
   return (
     <>
       <div className="home">
@@ -144,15 +151,15 @@ function Home() {
 
         <div className="footer-right">
           <h3>JOIN US</h3>
-          <p>HEHjckjanjnjlnlenflnelajnflnfljfnjesfnf</p>
-          <form>
+          <p>dgrgrgdrgdrgdrglenflnelajnflnfljfnjesfnf</p>
+          <form onSubmit={handleSubmit}>
             <div className="name-input">
-              <input type="name" placeholder="Name" />
-              <input type="email" placeholder="Email" />
+              <input type="name" placeholder="Name" required />
+              <input type="email" placeholder="Email" required />
             </div>
 
             <div className="contact-input">
-              <input type="number" placeholder="Contact" />
+              <input type="number" placeholder="Contact" required />
               <button>Join us</button>
             </div>
           </form>
