@@ -40,7 +40,7 @@ function Home() {
         </div>
 
         <div className="about-div">
-          <h3 className="about">About Us</h3>
+          <h3 id="about" className="about">About Us</h3>
           <p>
             We At Dump It Now Are Giving Our All Efforts Just To Keep Our Mother
             Earth Healthy By Our Little Effort. You Have Junk We Have Time To
@@ -48,11 +48,11 @@ function Home() {
             Best Thing Is You Will Get Beautiful Trees And Gardening Products As
             Per The Value Of Your Scrap.
           </p>
-          <button className="learn-btn">LEARN MORE</button>
+          <Link to="about"><button className="learn-btn">LEARN MORE</button></Link>
         </div>
       </div>
 
-      <div className="services-cont">
+      <div id="services" className="services-cont">
         <h3>Services</h3>
         <p>lorem ipsum</p>
         <p>Lorem ipsum</p>
@@ -105,9 +105,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="valuate-div">
+      <div id='valuate' className="valuate-div">
         <div className="plant-img">
-          <img src={plant} alt="plant" />
+          <img src={recycleLogo} alt="plant" />
         </div>
 
         <div className="valuate-para">
@@ -118,7 +118,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="supplies-div">
+      <div id="supplies" className="supplies-div">
         <div className="left-div">
           <h3>
             <span style={{ color: "rgb(209, 154, 27)" }}>PLANTS</span> AND
@@ -140,7 +140,7 @@ function Home() {
         </div>
 
         <div className="right-div">
-          <img src={recycleLogo} alt="recycle" />
+          <img src={plant} alt="recycle" />
         </div>
       </div>
 
@@ -158,7 +158,7 @@ function Home() {
               <input type="email" placeholder="Email" required />
             </div>
 
-            <div className="contact-input">
+            <div id="contact" className="contact-input">
               <input type="number" placeholder="Contact" required />
               <button>Join us</button>
             </div>

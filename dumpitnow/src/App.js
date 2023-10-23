@@ -1,3 +1,4 @@
+import About from "./components/About";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -14,6 +15,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/orderpage" element={<Order />} />
+        <Route exact path="/about" element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>
