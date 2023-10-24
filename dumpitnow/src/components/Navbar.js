@@ -14,7 +14,6 @@ function Navbar() {
 
   useEffect(() => {
     if (location.pathname !== homePath) {
-      
       const randomIndex = Math.floor(Math.random() * 3);
     
       switch (randomIndex) {
@@ -36,17 +35,24 @@ function Navbar() {
   const renderNavItemsOrRandomGif = () => {
     if (location.pathname === homePath) {
       return (
-        <div className="menu">
-          <li className="links"><a href="#about">About</a></li>
-          <li className="links"><a href="">Vision</a></li>
-          <li className="links"><a href="#services">Services</a></li>
-          <li className="links"><a href="#valuate">How We Valuate</a></li>
-          <li className="links"><a href="#supplies">Supplies</a></li>
-          <li className="links"><a href="#contact">Contact</a></li>
-        </div>
+        <>
+          <div className="menu">
+            <li className="links"><a href="#about">About</a></li>
+            <li className="links"><a href="">Vision</a></li>
+            <li className="links"><a href="#services">Services</a></li>
+            <li className="links"><a href="#valuate">How We Valuate</a></li>
+            <li className="links"><a href="#supplies">Supplies</a></li>
+            <li className="links"><a href="#contact">Contact</a></li>
+          </div>
+          <ul className="nav-links">
+            <input type="checkbox" id="checkbox_toggle" />
+            <label htmlFor="checkbox_toggle" className="hamburger">
+              &#9776;
+            </label>
+          </ul>
+        </>
       );
     } else {
-      // Render the random GIF
       return <img className="gifs" src={randomGif} alt="random gif" />;
     }
   };
@@ -59,14 +65,7 @@ function Navbar() {
             <img className="logo-img" src={logo} alt="logo" />
           </Link>
         </div>
-
-        <ul className="nav-links">
-          <input type="checkbox" id="checkbox_toggle" />
-          <label htmlFor="checkbox_toggle" className="hamburger">
-            &#9776;
-          </label>
-          {renderNavItemsOrRandomGif()} 
-        </ul>
+        {renderNavItemsOrRandomGif()}
       </nav>
     </>
   );

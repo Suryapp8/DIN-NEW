@@ -86,3 +86,11 @@ input[type="checkbox"] {
   width: 3rem;
   margin-right: 5rem;
 }
+
+@media (max-width: 768px){
+  .gifs{
+    padding-top: 0;
+    height: 2rem;
+  width: 2rem;
+  }
+}

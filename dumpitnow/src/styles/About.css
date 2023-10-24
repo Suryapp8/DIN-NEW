@@ -12,5 +12,10 @@
 }
 .go-green{
     color: #44ba00;
-    
+}
+
+@media (max-width: 768px){
+    .container-div{
+        font-size: 0.7rem;
+    }
 }

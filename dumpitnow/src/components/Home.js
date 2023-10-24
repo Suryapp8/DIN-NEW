@@ -7,15 +7,12 @@ import gaia from "../images/gaia.png";
 import dustbin from "../images/dustbin.png";
 import tree from "../images/tree.png";
 import recycle from "../images/recycle.png";
+import warning from "../images/warning.png";
 import { Link } from "react-router-dom";
 
 
-
 function Home() {
-
-  function handleSubmit(){
-  
-  }
+  function handleSubmit() {}
 
   return (
     <>
@@ -40,7 +37,9 @@ function Home() {
         </div>
 
         <div className="about-div">
-          <h3 id="about" className="about">About Us</h3>
+          <h3 id="about" className="about">
+            About Us
+          </h3>
           <p>
             We At Dump It Now Are Giving Our All Efforts Just To Keep Our Mother
             Earth Healthy By Our Little Effort. You Have Junk We Have Time To
@@ -48,7 +47,9 @@ function Home() {
             Best Thing Is You Will Get Beautiful Trees And Gardening Products As
             Per The Value Of Your Scrap.
           </p>
-          <Link to="about"><button className="learn-btn">LEARN MORE</button></Link>
+          <Link to="about">
+            <button className="learn-btn">LEARN MORE</button>
+          </Link>
         </div>
       </div>
 
@@ -105,7 +106,7 @@ function Home() {
         </div>
       </div>
 
-      <div id='valuate' className="valuate-div">
+      <div id="valuate" className="valuate-div">
         <div className="plant-img">
           <img src={recycleLogo} alt="plant" />
         </div>
@@ -150,7 +151,12 @@ function Home() {
         </div>
 
         <div className="footer-right">
-          <h3>JOIN US</h3>
+          <h3>
+            JOIN US
+            <a data-tooltip-id="my-tooltip" data-tooltip-content="By joining us you can be our regular customer">
+              <img className="warning" src={warning} alt="warning-sign" />
+            </a>
+          </h3>
           <p>nelajnflnfljfnjesfnf</p>
           <form onSubmit={handleSubmit}>
             <div className="name-input">
@@ -160,7 +166,7 @@ function Home() {
 
             <div id="contact" className="contact-input">
               <input type="number" placeholder="Contact" required />
-              <button>Join us</button>
+              <button>Join us </button>
             </div>
           </form>
         </div>
@@ -168,5 +174,7 @@ function Home() {
     </>
   );
 }
+
+
 
 export default Home;
