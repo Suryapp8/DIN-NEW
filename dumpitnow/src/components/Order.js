@@ -4,6 +4,7 @@ import { firestore } from "../firebase/firebase.js";
 import { addDoc, collection } from "@firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
+
 function OrderPage() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
@@ -11,11 +12,10 @@ function OrderPage() {
   const [phone, setPhone] = useState();
   const [address1, setAddress1] = useState();
   const [address2, setAddress2] = useState();
-  const [city, setCity] = useState()
+  const [city, setCity] = useState();
   const [pickupdate, setPickupdate] = useState();
   const [pickUpTime, setPickUpTime] = useState();
 
- 
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -34,7 +34,7 @@ function OrderPage() {
 
     try {
       addDoc(ref, data);
-      alert("Congratulations! Your pick up has been scheduled.");
+      alert("Your order has been scheduled")
     } catch (err) {
       console.log(err);
     }
@@ -188,6 +188,8 @@ function OrderPage() {
             <button className="schedule">Schedule pickup</button>
           </div>
         </form>
+
+        
       </div>
     </>
   );

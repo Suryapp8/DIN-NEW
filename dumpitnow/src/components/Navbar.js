@@ -10,6 +10,7 @@ function Navbar() {
   const location = useLocation();
   const [randomGif, setRandomGif] = useState(null);
 
+
   const homePath = "/"; 
 
   useEffect(() => {
@@ -32,6 +33,11 @@ function Navbar() {
     }
   }, [location.pathname, homePath]);
 
+  const toggleMenu = () => {
+    const menu = document.querySelector(".menu");
+    menu.classList.toggle("active");
+  };
+
   const renderNavItemsOrRandomGif = () => {
     if (location.pathname === homePath) {
       return (
@@ -45,17 +51,20 @@ function Navbar() {
             <li className="links"><a href="#contact">Contact</a></li>
           </div>
           <ul className="nav-links">
-            <input type="checkbox" id="checkbox_toggle" />
-            <label htmlFor="checkbox_toggle" className="hamburger">
-              &#9776;
-            </label>
-          </ul>
+          <input type="checkbox" id="checkbox_toggle" />
+          <label htmlFor="checkbox_toggle" className="hamburger" onClick={toggleMenu}>
+            &#9776;
+          </label>
+          
+        </ul>
         </>
       );
     } else {
       return <img className="gifs" src={randomGif} alt="random gif" />;
     }
   };
+
+
 
   return (
     <>

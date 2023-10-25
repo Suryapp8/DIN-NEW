@@ -72,9 +72,7 @@
     padding-top: 5rem;
   }
   .div-1 {
-    height: 10vh;
-    font-size: 1rem;
-    top: 63%;
+    display: none;
   }
 
   .line-1 {
@@ -130,6 +128,7 @@
 @media (max-width: 768px){
   .div-2{
     width: 100%;
+    margin-top: 3rem;
   }
   .about-div {
     width: 60%;
@@ -251,7 +250,7 @@
 
 .plant-img > img {
   height: 40vh;
-  width: 100%;
+  width: 90%;
 }
 
 .valuate-para {
@@ -305,7 +304,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 90%;
   height: 50vh;
   margin: auto;
   

@@ -1,0 +1,30 @@
+.react-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35vh;
+    width: 60%;
+    color: black;
+    background : url(../images/frame.jpeg);
+    background-size:contain;
+    border: none;
+}
+
+.react-modal > button{
+background-color: transparent;
+border-radius: 5px;
+text-decoration: solid;
+}
+
+@media (max-width: 768px){
+    .react-modal{
+        height: 25vh;
+        font-size: 0.5rem;
+        width: 80%;
+    }
+}

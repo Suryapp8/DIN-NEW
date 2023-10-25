@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/home.css";
 import treeman from "../images/treeman.jpg";
 import plant from "../images/plant.jpg";
@@ -8,11 +8,47 @@ import dustbin from "../images/dustbin.png";
 import tree from "../images/tree.png";
 import recycle from "../images/recycle.png";
 import warning from "../images/warning.png";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { firestore } from "../firebase/firebase.js";
+import { addDoc, collection } from "@firebase/firestore";
+import Modal from "react-modal";
 
 function Home() {
-  function handleSubmit() {}
+  const navigate = useNavigate();
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [contact, setContact] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const ref = collection(firestore, "Registered users");
+    let data = {
+      name,
+      email,
+      contact,
+      createdAt: new Date(),
+    };
+
+    try {
+      addDoc(ref, data);
+      setModalIsOpen(true);
+    } catch (err) {
+      console.log(err);
+    }
+    navigate("/");
+  }
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePhone = (e) => {
+    setContact(e.target.value);
+  };
 
   return (
     <>
@@ -153,28 +189,56 @@ function Home() {
         <div className="footer-right">
           <h3>
             JOIN US
-            <a data-tooltip-id="my-tooltip" data-tooltip-content="By joining us you can be our regular customer">
+            <a
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="By joining us you can be our regular customer"
+            >
               <img className="warning" src={warning} alt="warning-sign" />
             </a>
           </h3>
           <p>nelajnflnfljfnjesfnf</p>
           <form onSubmit={handleSubmit}>
             <div className="name-input">
-              <input type="name" placeholder="Name" required />
-              <input type="email" placeholder="Email" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={handleName}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleEmail}
+                required
+              />
             </div>
-
             <div id="contact" className="contact-input">
-              <input type="number" placeholder="Contact" required />
-              <button>Join us </button>
+              <input
+                type="number"
+                name="contact"
+                placeholder="Contact"
+                onChange={handlePhone}
+                required
+              />
+              <button type="submit">Join us</button>
             </div>
           </form>
+          <Modal
+           className="react-modal"
+            isOpen={modalIsOpen}
+            onRequestClose={() => setModalIsOpen(false)}
+            contentLabel="Thankyou for registering with us"
+          >
+            <h2>Thank you for joining us!</h2>
+            <p>You are now part of Dump It Now.</p>
+            <button onClick={() => setModalIsOpen(false)}>Close</button>
+          </Modal>
         </div>
       </div>
     </>
   );
 }
-
-
 
 export default Home;

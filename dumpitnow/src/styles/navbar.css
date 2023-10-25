@@ -49,6 +49,9 @@ input[type="checkbox"] {
   user-select: none;
 }
 
+/* CSS */
+/* ... Your existing CSS ... */
+
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -57,8 +60,14 @@ input[type="checkbox"] {
     left: 0;
     text-align: center;
     padding: 1rem 0;
-    background-color: #0c1a1a;
+    background-color: black;
     z-index: 3;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .links {
@@ -68,20 +77,16 @@ input[type="checkbox"] {
     margin-top: 0.8rem;
   }
 
-  
-
-  input[type="checkbox"]:checked ~ .menu {
-    display: block;
-  }
-
   .hamburger {
     display: block;
-    color: blanchedalmond;
+    font-size: 1.5rem;
+    user-select: none;
+    cursor: pointer;
   }
 }
 
+
 .gifs{
-  padding-top: 1rem;
   height: 3rem;
   width: 3rem;
   margin-right: 5rem;
@@ -93,4 +98,6 @@ input[type="checkbox"] {
     height: 2rem;
   width: 2rem;
   }
+
+ 
 }
