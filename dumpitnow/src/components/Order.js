@@ -4,7 +4,6 @@ import { firestore } from "../firebase/firebase.js";
 import { addDoc, collection } from "@firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-
 function OrderPage() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
@@ -15,7 +14,6 @@ function OrderPage() {
   const [city, setCity] = useState();
   const [pickupdate, setPickupdate] = useState();
   const [pickUpTime, setPickUpTime] = useState();
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -34,7 +32,7 @@ function OrderPage() {
 
     try {
       addDoc(ref, data);
-      alert("Your order has been scheduled")
+      alert("Your order has been scheduled");
     } catch (err) {
       console.log(err);
     }
@@ -69,6 +67,113 @@ function OrderPage() {
   return (
     <>
       <div className="orderpage">
+        <div className="order-img"></div>
+
+        <div className="blank-div"></div>
+        <form onSubmit={handleSubmit} className="form form-style-3">
+          <div className="form-field">
+            <label for="field1">
+              Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              <input
+                type="name"
+                placeholder="Enter your name"
+                required
+                name="user"
+                onChange={handleName}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                name="email"
+                onChange={handleEmail}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Phone:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="number"
+                placeholder="Enter your phone number"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required
+                name="phone"
+                onChange={handlePhone}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Address Line 1: &nbsp;&nbsp;&nbsp;
+              <input
+                type="name"
+                placeholder="Enter your address"
+                required
+                name="address1"
+                onChange={handleAddressLine1}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Address Line 2:&nbsp;&nbsp;&nbsp;
+              <input
+                type="name"
+                placeholder="Enter your address"
+                required
+                name="address2"
+                onChange={handleAddressLine2}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              City: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="name"
+                placeholder="Enter your city"
+                required
+                name="city"
+                onChange={handleCity}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Pick up time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="time"
+                placeholder="Enter your name"
+                required
+                name="pickUpTime"
+                onChange={handlePickUpTime}
+              />
+            </label>
+          </div>
+          <div className="form-field">
+            <label>
+              Pick up date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="date"
+                placeholder="Enter your name"
+                required
+                name="pickupdate"
+                onChange={handlePickUpDate}
+              />
+            </label>
+          </div>
+
+          <div className="button-div">
+            <button className="schedule">Schedule Pickup</button>
+          </div>
+        </form>
+
         <div className="services-container">
           <div className="services-about">
             <ul>
@@ -99,97 +204,6 @@ function OrderPage() {
             </ul>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="form">
-          <div className="name">
-            <h3>Name:</h3>
-            <input
-              type="name"
-              placeholder="Enter your name"
-              required
-              name="user"
-              onChange={handleName}
-            />
-          </div>
-          <div className="name">
-            <h3>Email:</h3>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              required
-              name="email"
-              onChange={handleEmail}
-            />
-          </div>
-          <div className="name">
-            <h3>Phone:</h3>
-            <input
-              type="number"
-              placeholder="Enter your phone number"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required
-              name="phone"
-              onChange={handlePhone}
-            />
-          </div>
-          <div className="name">
-            <h3>Address Line 1:</h3>
-            <input
-              type="name"
-              placeholder="Enter your address"
-              required
-              name="address1"
-              onChange={handleAddressLine1}
-            />
-          </div>
-          <div className="name">
-            <h3>Address Line 2:</h3>
-            <input
-              type="name"
-              placeholder="Enter your address"
-              required
-              name="address2"
-              onChange={handleAddressLine2}
-            />
-          </div>
-
-          <div className="name">
-            <h3>City:</h3>
-            <input
-              type="name"
-              placeholder="Enter your city"
-              required
-              name="city"
-              onChange={handleCity}
-            />
-          </div>
-
-          <div className="name">
-            <h3>Pick up date:</h3>
-            <input
-              type="date"
-              placeholder="Enter your name"
-              required
-              name="pickupdate"
-              onChange={handlePickUpDate}
-            />
-          </div>
-          <div className="name">
-            <h3>Pick up time:</h3>
-            <input
-              type="time"
-              placeholder="Enter your name"
-              required
-              name="pickUpTime"
-              onChange={handlePickUpTime}
-            />
-          </div>
-
-          <div className="button-div">
-            <button className="schedule">Schedule pickup</button>
-          </div>
-        </form>
-
-        
       </div>
     </>
   );

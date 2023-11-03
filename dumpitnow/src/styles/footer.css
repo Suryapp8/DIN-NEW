@@ -32,7 +32,7 @@
   margin-right: 1rem;
   width: 40%;
   margin-bottom: 1rem;
-  color: #44ba00;
+  color: black;
 }
 
 .contact-input > input {
@@ -40,7 +40,7 @@
   border: 1px solid grey;
   margin-right: 1rem;
   width: 40%;
-  color: #44ba00;
+  color: black;
 }
 
 .contact-input > button {

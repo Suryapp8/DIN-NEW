@@ -27,7 +27,7 @@ nav {
   margin-right: 2rem;
 }
 
-.links > a{
+.links > a {
   text-decoration: none;
   color: white;
   margin-left: 1rem;
@@ -36,8 +36,8 @@ nav {
 }
 
 .links > a:hover {
-    color: green;
-  }
+  color: green;
+}
 
 input[type="checkbox"] {
   display: none;
@@ -48,9 +48,6 @@ input[type="checkbox"] {
   font-size: 1.5rem;
   user-select: none;
 }
-
-/* CSS */
-/* ... Your existing CSS ... */
 
 @media (max-width: 768px) {
   .menu {
@@ -63,7 +60,6 @@ input[type="checkbox"] {
     background: black;
     z-index: 3;
     width: 90%;
-
   }
 
   .menu.active {
@@ -74,7 +70,7 @@ input[type="checkbox"] {
 
   .links {
     display: block;
-    transition: 0.3s ease;
+    transition: 1s ease-in;
     color: white;
     margin-top: 0.8rem;
   }
@@ -88,19 +84,16 @@ input[type="checkbox"] {
   }
 }
 
-
-.gifs{
+.gifs {
   height: 3rem;
   width: 3rem;
   margin-right: 5rem;
 }
 
-@media (max-width: 768px){
-  .gifs{
+@media (max-width: 768px) {
+  .gifs {
     padding-top: 0;
     height: 2rem;
-  width: 2rem;
+    width: 2rem;
   }
-
- 
 }

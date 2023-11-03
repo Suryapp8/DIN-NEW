@@ -6,17 +6,19 @@ import bin from "../images/bin.gif";
 import "../styles/navbar.css";
 import { Link, useLocation } from "react-router-dom";
 
+
 function Navbar() {
   const location = useLocation();
   const [randomGif, setRandomGif] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  
 
-
-  const homePath = "/"; 
+  const homePath = "/";
 
   useEffect(() => {
     if (location.pathname !== homePath) {
       const randomIndex = Math.floor(Math.random() * 3);
-    
+
       switch (randomIndex) {
         case 0:
           setRandomGif(trash);
@@ -28,7 +30,7 @@ function Navbar() {
           setRandomGif(bin);
           break;
         default:
-          setRandomGif(trash); 
+          setRandomGif(trash);
       }
     }
   }, [location.pathname, homePath]);
@@ -43,28 +45,45 @@ function Navbar() {
       return (
         <>
           <div className="menu">
-            <li className="links"><a href="#about">About</a></li>
-            <li className="links"><a href="">Vision</a></li>
-            <li className="links"><a href="#services">Services</a></li>
-            <li className="links"><a href="#valuate">How We Valuate</a></li>
-            <li className="links"><a href="#supplies">Supplies</a></li>
-            <li className="links"><a href="#contact">Contact</a></li>
+            <li className="links">
+              <a href="#about">About</a>
+            </li>
+            <li className="links">
+              <a href="">Vision</a>
+            </li>
+            <li className="links">
+              <a href="#services">Services</a>
+            </li>
+            <li className="links">
+              <a href="#valuate">How We Valuate</a>
+            </li>
+            <li className="links">
+              <a href="#supplies">Supplies</a>
+            </li>
+            <li className="links">
+              <a href="#contact">Contact</a>
+            </li>
           </div>
           <ul className="nav-links">
-          <input type="checkbox" id="checkbox_toggle" />
-          <label htmlFor="checkbox_toggle" className="hamburger" onClick={toggleMenu}>
-            &#9776;
-          </label>
-          
-        </ul>
+            <input type="checkbox" id="checkbox_toggle" checked={menuOpen} />
+            <label
+              htmlFor="checkbox_toggle"
+              className="hamburger"
+              onClick={toggleMenu}
+            >
+              &#9776;
+            </label>
+          </ul>
+
+
+
+
         </>
       );
     } else {
       return <img className="gifs" src={randomGif} alt="random gif" />;
     }
   };
-
-
 
   return (
     <>
