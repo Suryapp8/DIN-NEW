@@ -143,9 +143,7 @@ function Home() {
       </div>
 
       <div id="valuate" className="valuate-div">
-        <div className="plant-img">
-          <img src={recycleLogo} alt="plant" />
-        </div>
+        <div className="plant-img"></div>
 
         <div className="valuate-para">
           <h3>
@@ -177,7 +175,7 @@ function Home() {
         </div>
 
         <div className="right-div">
-          <img src={plant} alt="recycle" />
+          {/* <img src={plant} alt="recycle" /> */}
         </div>
       </div>
 
@@ -226,7 +224,7 @@ function Home() {
             </div>
           </form>
           <Modal
-           className="react-modal"
+            className="react-modal"
             isOpen={modalIsOpen}
             onRequestClose={() => setModalIsOpen(false)}
             contentLabel="Thankyou for registering with us"
