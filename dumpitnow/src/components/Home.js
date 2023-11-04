@@ -175,7 +175,7 @@ function Home() {
         </div>
 
         <div className="right-div">
-          {/* <img src={plant} alt="recycle" /> */}
+          
         </div>
       </div>
 

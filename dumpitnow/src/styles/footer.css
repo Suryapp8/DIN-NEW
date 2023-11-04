@@ -50,12 +50,12 @@
   color: white;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .footer-left {
     width: 40%;
     background-color: #44ba00;
   }
-  .footer-right{
+  .footer-right {
     width: 50%;
     font-size: 0.8rem;
   }
@@ -63,7 +63,7 @@
 
 .footer-2 {
   display: flex;
-  justify-content:space-evenly ;
+  justify-content: space-evenly;
   align-items: center;
   width: 80%;
   margin: auto;
@@ -74,63 +74,64 @@
   width: 8rem;
 }
 
-.social-div > a > img{
-   height: 2rem;
-   width: 2rem;
-   margin-left: 1rem;
-
+.social-div > a > img {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
 }
 
-.part-2, .part-3, .part-4{
-    display: flex;
-    flex-direction: column;
-    font-size: 0.8rem;
+.part-2,
+.part-3,
+.part-4 {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
 }
 
-.remove-underline{
-    text-decoration: none;
-    color: black;
+.remove-underline {
+  text-decoration: none;
+  color: black;
 }
 
-@media (max-width: 768px){
-  .footer-2{
+@media (max-width: 768px) {
+  .footer-2 {
     justify-content: space-evenly;
     width: 100%;
-    font-size: 0.5rem; 
+    font-size: 0.2rem;
   }
-
-  .part-1 > img{
+  .remove-underline{
+    font-size: 0.4rem;
+  }
+  .part-1 > img {
     height: 5rem;
     width: 5rem;
   }
 
-  .part-2 > h3, .part-3 > h3, .part-4 > h3{
-      font-size: 0.6rem;
-      font-weight: bolder;
+  .part-2 > h3,
+  .part-3 > h3,
+  .part-4 > h3 {
+    font-size: 0.6rem;
+    font-weight: bolder;
+  }
+
+  .social-div > a > img {
+    height: 1rem;
+    width: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  .give-margin {
+    margin-left: 0.3rem;
+    font-size: 0.4rem;
+  }
 }
 
-.social-div > a > img{
-  height: 1rem;
-  width: 1rem;
-  margin-left: 0.3rem;
-
+.footer-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 2rem;
+  margin-top: 1rem;
 }
-
-.give-margin{
-  margin-left: 0.3rem;
-  font-size: 0.4rem;
-}
-
-}
-
-.footer-3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:white;
-    background-color: black;
-    height: 2rem;
-    margin-top: 1rem;
-}
-
-
