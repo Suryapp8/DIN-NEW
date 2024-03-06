@@ -168,7 +168,7 @@
   margin-bottom: 4rem;
   background-color: #2ca729;
   border: none;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 .img-div > img {
   height: 5rem;
@@ -189,9 +189,9 @@
 }
 
 .h3-services{
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   color: black;
-  padding-top: 0.7rem;
+ 
 }
 
 @media (max-width: 768px) {
@@ -199,6 +199,13 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
   }
+
+  .h3-services{
+    font-size: 0.5rem;
+    color: black;
+    
+  }
+
   .box-1 {
     margin: auto;
     display: flex;
