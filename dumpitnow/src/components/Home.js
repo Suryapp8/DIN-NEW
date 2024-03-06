@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "../styles/home.css";
 import treeman from "../images/treeman.jpg";
-import plant from "../images/plant.jpg";
-import recycleLogo from "../images/recycleLogo.jpg";
-import gaia from "../images/gaia.png";
+// import plant from "../images/plant.jpg";
+// import recycleLogo from "../images/recycleLogo.jpg";
+// import gaia from "../images/gaia.png";
+// import truckwaste from "../images/truck-waste.png";
+import gardener from "../images/gardener.png";
+import plantnew from "../images/plantnew.png";
+import decoration from "../images/decoration.png";
 import dustbin from "../images/dustbin.png";
 import tree from "../images/tree.png";
-import recycle from "../images/recycle.png";
+// import recycle from "../images/recycle.png";
 import warning from "../images/warning.png";
 import { Link, useNavigate } from "react-router-dom";
 import { firestore } from "../firebase/firebase.js";
@@ -91,52 +95,56 @@ function Home() {
 
       <div id="services" className="services-cont">
         <h3>Services</h3>
-        <p>lorem ipsum</p>
-        <p>Lorem ipsum</p>
+       
       </div>
 
       <div className="slides">
         <div className="box-1">
           <div className="img-div">
-            <img src={gaia} alt="img" />
+            <img src={dustbin} alt="img" />
           </div>
           <div className="curve-div">
             <p>
-              We Serve To Create Awareness And Let You Be The Curator Of Our
-              Mother Earth.
+              We collect scrap from your doorstep at your convenient time, and
+              you will get plants in exchange of scraps. If you are not a plant
+              lover you can ask for money in return as well.
             </p>
           </div>
         </div>
         <div className="box-1">
           <div className="img-div">
-            <img src={gaia} alt="img" />
+            <img src={gardener} alt="img" />
           </div>
           <div className="curve-div">
             <p>
-              We Serve To Create Awareness And Let You Be The Curator Of Our
-              Mother Earth.
-            </p>
-          </div>{" "}
-        </div>
-        <div className="box-1">
-          <div className="img-div">
-            <img src={gaia} alt="img" />
-          </div>
-          <div className="curve-div">
-            <p>
-              We Serve To Create Awareness And Let You Be The Curator Of Our
-              Mother Earth.
+              We offer Malli(Gardner) service for regular maintenance of your garden
+              space.
+              our gardener services are designed to transform your outdoor spaces into vibrant and thriving landscapes.
             </p>
           </div>{" "}
         </div>
         <div className="box-1">
           <div className="img-div">
-            <img src={gaia} alt="img" />
+            <img src={tree} alt="img" />
           </div>
           <div className="curve-div">
             <p>
-              We Serve To Create Awareness And Let You Be The Curator Of Our
-              Mother Earth.
+              You can also avail regular supply of plants and plant nutrients
+              You can avail all these services even if you don't have scrap to
+              dump with us at a. nominal fees.
+            </p>
+          </div>{" "}
+        </div>
+        <div className="box-1">
+          <div className="img-div">
+            <img src={decoration} alt="img" />
+          </div>
+          <div className="curve-div">
+            <p>
+              Regular collection of scrap with an option to get interior
+              decoration of your office space with mesmerizing plants Or Gifting
+              pots at regular intervals We also offer Bio-waste collection cum
+              management services.
             </p>
           </div>
         </div>
@@ -149,7 +157,19 @@ function Home() {
           <h3>
             <span style={{ color: "rgb(209, 154, 27)" }}>HOW</span> WE VALUATE
           </h3>
-          <p>hehehheheheheheheh</p>
+          <p>
+            At DIN, we understand the importance of valuing scrap materials
+            fairly and transparently. Our valuation process takes into account
+            various factors such as the type and quantity of materials, current
+            market prices, and the condition of the items. We strive to offer
+            competitive rates to our customers while also considering the
+            environmental impact of recycling. Our team of experts meticulously
+            assesses each item to ensure accurate and honest valuations. With
+            our commitment to integrity and sustainability, you can trust that
+            you'll receive a fair value for your scrap materials when you choose
+            DIN.
+            <span>Click here for detailed scrap ratelist</span>
+          </p>
         </div>
       </div>
 
@@ -159,24 +179,26 @@ function Home() {
             <span style={{ color: "rgb(209, 154, 27)" }}>PLANTS</span> AND
             SUPPLIES
           </h3>
-          <p>blah blah blah blah blah</p>
+          <p></p>
           <div className="dust">
-            <img src={dustbin} alt="" />
-            <p>blah blah blah</p>
+            
+            <p>
+              At DIN, we believe in sustainability and giving back to the
+              environment. As part of our commitment to eco-friendly practices,
+              we offer a unique exchange program where you can trade your scrap
+              materials for vibrant and lush plants. Not only does this
+              initiative help reduce waste and promote recycling, but it also
+              contributes to creating green spaces and improving air quality in
+              our communities. Each plant we provide is carefully selected for
+              its beauty and resilience, ensuring that you receive not only a
+              valuable addition to your space but also a symbol of our shared
+              dedication to a greener future.
+            </p>
           </div>
-          <div className="dust">
-            <img src={recycle} alt="" />
-            <p>blah blah blah</p>
-          </div>
-          <div className="dust">
-            <img src={tree} alt="" />
-            <p>blah blah blah</p>
-          </div>
-        </div>
-
-        <div className="right-div">
           
         </div>
+
+        <div className="right-div"></div>
       </div>
 
       <div className="footer">
