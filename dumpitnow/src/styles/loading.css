@@ -1,0 +1,21 @@
+.loading-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    margin: auto;
+    border: 0.4rem solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 0.4rem solid #FF7A59;
+    width: 2rem;
+    height: 2rem;
+    animation: spinner 4s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
