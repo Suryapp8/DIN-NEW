@@ -203,6 +203,7 @@
     border: 10 solid grey;
     margin-bottom: 2rem;
     font-size: 0.5rem;
+    text-transform: capitalize;
   }
 }
 
@@ -258,7 +259,6 @@
 }
 
 @media (max-width: 768px) {
-  
   .valuate-div {
     height: 35vh;
     border-bottom: 2rem;
@@ -266,6 +266,7 @@
 
   .valuate-para {
     font-size: 0.4rem;
+    text-transform: capitalize;
     height: 35vh;
   }
 
@@ -315,6 +316,7 @@
     width: 100%;
     height: 35vh;
     font-size: 0.4rem;
+    text-transform: capitalize;
   }
 
   .left-div > h3 {
