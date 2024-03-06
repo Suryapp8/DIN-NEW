@@ -103,6 +103,7 @@ function Home() {
             <img src={dustbin} alt="img" />
           </div>
           <div className="curve-div">
+            <h3 className="h3-services">Scrap Collection</h3>
             <p>
               We collect scrap from your doorstep at your convenient time, and
               you will get plants in exchange of scraps. If you are not a plant
@@ -115,6 +116,7 @@ function Home() {
             <img src={gardener} alt="img" />
           </div>
           <div className="curve-div">
+          <h3 className="h3-services">Gardening Services</h3>
             <p>
               We offer Malli(Gardner) service for regular maintenance of your
               garden space. our gardener services are designed to transform your
@@ -127,10 +129,11 @@ function Home() {
             <img src={tree} alt="img" />
           </div>
           <div className="curve-div">
+          <h3 className="h3-services">Plants Nutrients</h3>
             <p>
               You can also avail regular supply of plants and plant nutrients
               You can avail all these services even if you don't have scrap to
-              dump with us at a. nominal fees.
+              dump with us at a nominal fees.
             </p>
           </div>{" "}
         </div>
@@ -139,6 +142,7 @@ function Home() {
             <img src={decoration} alt="img" />
           </div>
           <div className="curve-div">
+          <h3 className="h3-services">Corporate Tie-Up</h3>
             <p>
               Regular collection of scrap with an option to get interior
               decoration of your office space with mesmerizing plants Or Gifting
