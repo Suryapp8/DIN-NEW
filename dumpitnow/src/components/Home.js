@@ -6,7 +6,6 @@ import treeman from "../images/treeman.jpg";
 // import gaia from "../images/gaia.png";
 // import truckwaste from "../images/truck-waste.png";
 import gardener from "../images/gardener.png";
-import plantnew from "../images/plantnew.png";
 import decoration from "../images/decoration.png";
 import dustbin from "../images/dustbin.png";
 import tree from "../images/tree.png";
@@ -15,6 +14,7 @@ import warning from "../images/warning.png";
 import { Link, useNavigate } from "react-router-dom";
 import { firestore } from "../firebase/firebase.js";
 import { addDoc, collection } from "@firebase/firestore";
+
 import Modal from "react-modal";
 
 function Home() {
@@ -95,7 +95,6 @@ function Home() {
 
       <div id="services" className="services-cont">
         <h3>Services</h3>
-       
       </div>
 
       <div className="slides">
@@ -117,9 +116,9 @@ function Home() {
           </div>
           <div className="curve-div">
             <p>
-              We offer Malli(Gardner) service for regular maintenance of your garden
-              space.
-              our gardener services are designed to transform your outdoor spaces into vibrant and thriving landscapes.
+              We offer Malli(Gardner) service for regular maintenance of your
+              garden space. our gardener services are designed to transform your
+              outdoor spaces into vibrant and thriving landscapes.
             </p>
           </div>{" "}
         </div>
@@ -168,7 +167,12 @@ function Home() {
             our commitment to integrity and sustainability, you can trust that
             you'll receive a fair value for your scrap materials when you choose
             DIN.
-            <span>Click here for detailed scrap ratelist</span>
+
+            <span >
+              <Link className="changepage" to="/ratelist">
+                 Click here for detailed scrap ratelist.
+              </Link>
+            </span>
           </p>
         </div>
       </div>
@@ -181,7 +185,6 @@ function Home() {
           </h3>
           <p></p>
           <div className="dust">
-            
             <p>
               At DIN, we believe in sustainability and giving back to the
               environment. As part of our commitment to eco-friendly practices,
@@ -195,17 +198,12 @@ function Home() {
               dedication to a greener future.
             </p>
           </div>
-          
         </div>
 
         <div className="right-div"></div>
       </div>
 
       <div className="footer">
-        <div className="footer-left">
-          <h3>hello</h3>
-        </div>
-
         <div className="footer-right">
           <h3>
             JOIN US
@@ -216,7 +214,7 @@ function Home() {
               <img className="warning" src={warning} alt="warning-sign" />
             </a>
           </h3>
-          <p>nelajnflnfljfnjesfnf</p>
+
           <form onSubmit={handleSubmit}>
             <div className="name-input">
               <input

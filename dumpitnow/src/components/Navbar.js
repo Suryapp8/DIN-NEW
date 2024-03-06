@@ -36,34 +36,33 @@ function Navbar() {
   }, [location.pathname, homePath]);
 
   const toggleMenu = () => {
-    const menu = document.querySelector(".menu");
-    menu.classList.toggle("active");
+    setMenuOpen(!menuOpen); // Toggle the menuOpen state
   };
 
   const renderNavItemsOrRandomGif = () => {
     if (location.pathname === homePath) {
       return (
         <>
-          <div className="menu">
-            <li className="links">
-              <a href="#about">About</a>
-            </li>
-            <li className="links">
-              <a href="">Vision</a>
-            </li>
-            <li className="links">
-              <a href="#services">Services</a>
-            </li>
-            <li className="links">
-              <a href="#valuate">How We Valuate</a>
-            </li>
-            <li className="links">
-              <a href="#supplies">Supplies</a>
-            </li>
-            <li className="links">
-              <a href="#contact">Contact</a>
-            </li>
-          </div>
+          <div className={`menu ${menuOpen ? 'active' : ''}`}>
+  <li className="links">
+    <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+  </li>
+  <li className="links">
+    <Link to="/ratelist" onClick={() => setMenuOpen(false)}>Scrap List</Link>
+  </li>
+  <li className="links">
+    <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+  </li>
+  <li className="links">
+    <a href="#valuate" onClick={() => setMenuOpen(false)}>How We Valuate</a>
+  </li>
+  <li className="links">
+    <a href="#supplies" onClick={() => setMenuOpen(false)}>Supplies</a>
+  </li>
+  <li className="links">
+    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+  </li>
+</div>
           <ul className="nav-links">
             <input type="checkbox" id="checkbox_toggle" checked={menuOpen} />
             <label
@@ -74,17 +73,13 @@ function Navbar() {
               &#9776;
             </label>
           </ul>
-
-
-
-
         </>
       );
     } else {
       return <img className="gifs" src={randomGif} alt="random gif" />;
     }
   };
-
+  
   return (
     <>
       <nav>

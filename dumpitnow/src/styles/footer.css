@@ -2,26 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../images/blurred.jpg");
+  background: url("../images/blurred2.jpg");
   background-position: center;
-  background-size: cover;
+  background-size:contain;
   height: 40vh;
   width: 100%;
-  margin: 2rem 0;
+  
 }
 
-.footer-left {
-  height: 45vh;
-  width: 30%;
-  background-color: #44ba00;
-}
 
 .footer-right {
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: white;
-  height: 32vh;
+  height: 35vh;
   padding-left: 2rem;
   overflow: auto;
 }
@@ -51,10 +46,16 @@
 }
 
 @media (max-width: 768px) {
-  .footer-left {
-    width: 40%;
-    background-color: #44ba00;
+
+  .name-input > input, .contact-input > input{
+    width: 80%;
   }
+  .contact-input > button{
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+  
   .footer-right {
     width: 50%;
     font-size: 0.8rem;
@@ -65,8 +66,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  background-color: #d0d0d0;
+  padding-bottom: 1rem;
 }
 
 .part-1 > img {
@@ -77,7 +79,7 @@
 .social-div > a > img {
   height: 2rem;
   width: 2rem;
-  margin-left: 1rem;
+  margin-left: 0.8rem;
 }
 
 .part-2,
@@ -133,5 +135,5 @@
   color: white;
   background-color: black;
   height: 2rem;
-  margin-top: 1rem;
+  
 }

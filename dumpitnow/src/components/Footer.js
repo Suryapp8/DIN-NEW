@@ -13,7 +13,7 @@ function Footer() {
     <div className="footer-2">
       <div className="part-1">
         <img src={dinlogo} alt=""/>
-        <p className="give-margin">blah blaah bllaah blaaah</p>
+        <p className="give-margin"></p>
         <div className="social-div">
          <a href=""><img src={facebook} alt="facebook" /></a>
          <a href=""><img src={instagram} alt="instagram" /></a>
