@@ -1,75 +1,51 @@
-/* ratelist.css */
-
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .category {
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .category:hover {
-    transform: scale(1.05);
-  }
-  
-  .category h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .subcategory-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 10px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s ease-in-out;
-  }
-  
-  .category.open .subcategory-list {
-    max-height: 200px; /* Adjust height as needed */
-  }
-  
-  .subcategory-item {
-    margin-bottom: 5px;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .subcategory-item:hover {
-    color: #007bff;
-  }
-  
-  .selected-subcategory {
-    margin-top: 20px;
-    animation: fadeIn 0.2s ease-in-out;
-  }
-  
-  .selected-subcategory h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .selected-subcategory p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.category {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.category.open {
+  background-color: #f9f9f9;
+}
+
+.subcategory-list {
+  margin: 10px 0 0 20px;
+  padding: 0;
+  list-style-type: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.category.open .subcategory-list {
+  max-height: 500px; /* Adjust this value to be large enough to fit the tallest subcategory list */
+}
+
+.subcategory-item {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* New CSS class to highlight the price */
+.price-highlight {
+  font-weight: bold;
+  color: #e74c3c; /* You can change this color to any color you prefer */
+  background-color: #f9f9f9; /* Optional: Add a background color to highlight the price */
+  padding: 2px 5px;
+  border-radius: 3px;
+}

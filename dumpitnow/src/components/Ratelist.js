@@ -6,31 +6,43 @@ const Ratelist = () => {
 
   const scrapRates = {
     Paper: {
-      Newspaper: 0.1,
-      Carton: 0.2,
-      books: 0.3,
-      Magazines: 0.15,
-      "White papers": 0.25,
-      "Plain paper": 0.3,
-      "Used beverage carton": 0.35,
+      "Newspaper & books": 10,
+      Carton: 8,
+      "White papers , Magazines , Copy": 7,
+      Tetrapack: 5,
+      "Plain paper": 2,
+      "Rough paper": 0,
     },
     Plastic: {
-      "Soft plastic": 0.2,
-      "Hard plastic": 0.3,
-      Polythene: 0.25,
-      "Plastic jar": 0.4,
+      "Soft plastic": 6,
+      "Hard plastic": 1,
+      Polythene: 8,
+      "Mix Polythene": 5,
+      "Plastic jar (15l)": 10,
+      "Plastic jar (5l)": 5,
+      "HPP, Water/Oil Cover": 0,
+      Fiber: 4.5,
     },
     Metal: {
-      Iron: 0.5,
-      Tin: 0.6,
-      Aluminium: 0.7,
-      Steel: 0.8,
-      Brass: 0.9,
-      Copper: 1.0,
+      Iron: 25,
+      Tin: 12,
+      Aluminium: 70,
+      Steel: 22,
+      Brass: 250,
+      Copper: 240,
+      "Oil Tin": 8,
+      "Casin Aluminium": 35,
+      "Beverages can (Aluminium)": 80,
     },
     "E-waste": {
-      Fridge: 5.0,
-      "Washing machine": 3.0,
+      Fridge: 500,
+      "Mix E-waste": 9,
+    },
+    Others: {
+      "Beer Bottles": 0.5,
+      "Mix waste": 3,
+      Battery: 70,
+      Tyre: 3,
     },
   };
 
@@ -44,7 +56,9 @@ const Ratelist = () => {
       <div>
         {Object.keys(scrapRates).map((category) => (
           <div
-            className={`category ${selectedCategory === category ? "open" : ""}`}
+            className={`category ${
+              selectedCategory === category ? "open" : ""
+            }`}
             key={category}
             onClick={() => handleCategoryClick(category)}
           >
@@ -52,11 +66,10 @@ const Ratelist = () => {
             <ul className="subcategory-list">
               {Object.entries(scrapRates[category]).map(
                 ([subcategory, rate]) => (
-                  <li
-                    className="subcategory-item"
-                    key={subcategory}
-                  >
-                    - {subcategory}: ₹ {rate.toFixed(2)} per Kg
+                  <li className="subcategory-item" key={subcategory}>
+                    - {subcategory}:{" "}
+                    <span className="price-highlight">₹ {rate.toFixed(2)}</span>{" "}
+                    per Kg
                   </li>
                 )
               )}
