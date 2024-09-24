@@ -101,9 +101,9 @@ function Navbar({ cartCount }) {
       <div className={`menu ${menuOpen ? "active" : ""}`}>
         <ul className="nav-links">
           <li className="links">
-            <Link to="/about" onClick={closeMenu}>
+            <a href="#about" onClick={closeMenu}>
               About
-            </Link>
+            </a>
           </li>
           <li className="links">
             <Link to="/ratelist" onClick={closeMenu}>
@@ -116,9 +116,9 @@ function Navbar({ cartCount }) {
             </Link>
           </li>
           <li className="links">
-            <Link to="/valuate" onClick={closeMenu}>
-              How We Valuate
-            </Link>
+            <a href="#valuate" onClick={closeMenu}>
+              How we valuate
+            </a>
           </li>
           <li className="links">
             <Link to="/supplies" onClick={closeMenu}>
@@ -126,12 +126,12 @@ function Navbar({ cartCount }) {
             </Link>
           </li>
           <li className="links">
-            <Link to="/contact" onClick={closeMenu}>
+            <a href="#contact" onClick={closeMenu}>
               Contact
-            </Link>
+            </a>
           </li>
           <li className="links cart">
-            <Link  to="/cart" onClick={closeMenu}>
+            <Link to="/cart" onClick={closeMenu}>
               🛒 Your Garden ({cartCount})
             </Link>
           </li>
