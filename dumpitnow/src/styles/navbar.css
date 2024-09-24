@@ -19,6 +19,11 @@ nav {
   cursor: pointer;
 }
 
+.onlyhomecart{
+  text-decoration: none;
+  color: white;
+}
+
 .menu {
   display: flex;
   align-items: center;
