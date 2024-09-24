@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import "./styles/App.css";
+import Checkout from "./components/Checkout";
+import Payment from "./components/Payment";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +39,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/orderpage" element={<Order />} />
               <Route path="/ratelist" element={<Ratelist />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/checkout" element={<Checkout cart={cart} />} />
               <Route
                 path="/plant"
                 element={<Plant setCart={setCart} cart={cart} />}
