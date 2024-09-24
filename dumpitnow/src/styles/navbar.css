@@ -2,98 +2,99 @@ nav {
   height: 4rem;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure space between logo and other items */
   background-color: black;
   color: white;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 2rem; /* Padding for the navbar */
+}
+
+.logo-cont {
+  flex: 0 0 auto; /* Logo on the left */
 }
 
 .logo-img {
-  height: 6rem;
-  width: 6rem;
-  cursor: pointer;
-  margin-left: 2rem;
-}
-
-.logo-img:hover {
-  transition: 0.3s ease-in-out;
+  height: 4rem; /* Adjust the size as needed */
   cursor: pointer;
 }
 
 .menu {
   display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin-right: 2rem;
+  justify-content: flex-end; /* Align menu items to the right */
+  flex: 1;
+}
+
+.nav-links {
+  display: flex; /* Display links in a row */
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.links {
+  margin-left: auto; /* Push links to the right */
 }
 
 .links > a {
   text-decoration: none;
   color: white;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 1rem; /* Margin between links */
   cursor: pointer;
 }
 
 .links > a:hover {
-  color: green;
+  color: green; /* Hover effect */
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
+/* Styles for hamburger menu */
 .hamburger {
-  display: none;
+  display: none; /* Hidden by default */
   font-size: 1.5rem;
   user-select: none;
+  cursor: pointer; /* Change cursor on hover */
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
   .menu {
-    display: none;
+    display: none; /* Hide menu by default */
     position: absolute;
-    top: 8%;
-    left: 40;
-    text-align: center;
-    padding: 1rem 0;
-    background: black;
+    top: 4rem; /* Position below the navbar */
+    left: 50%; /* Center align */
+    transform: translateX(-50%); /* Centering */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurry effect */
     z-index: 3;
-    width: 90%;
+    width: 90%; /* Full width on mobile */
+    flex-direction: column; /* Vertical alignment */
+    align-items: center; /* Center items */
+    transition: max-height 0.3s ease-in-out; /* Smooth transition */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflow */
   }
 
   .menu.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Show menu when active */
+    max-height: 500px; /* Adjust as needed */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width */
   }
 
   .links {
-    display: block;
-    transition: 1s ease-in;
-    color: white;
-    margin-top: 0.8rem;
+    width: 100%; /* Full width for each link */
+    text-align: center; /* Center text */
+    padding: 1rem 0; /* Padding for each link */
+  }
+
+  .links > a {
+    color: black; /* Change text color to black */
   }
 
   .hamburger {
-    display: block;
-    font-size: 1.5rem;
-    user-select: none;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-}
-
-.gifs {
-  height: 3rem;
-  width: 3rem;
-  margin-right: 5rem;
-}
-
-@media (max-width: 768px) {
-  .gifs {
-    padding-top: 0;
-    height: 2rem;
-    width: 2rem;
+    display: block; /* Show hamburger icon on mobile */
+    margin-left: auto; /* Align to the right */
   }
 }

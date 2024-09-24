@@ -116,7 +116,7 @@ function Home() {
             <img src={gardener} alt="img" />
           </div>
           <div className="curve-div">
-          <h3 className="h3-services">Gardening Services</h3>
+            <h3 className="h3-services">Gardening Services</h3>
             <p>
               We offer Malli(Gardner) service for regular maintenance of your
               garden space. our gardener services are designed to transform your
@@ -129,7 +129,7 @@ function Home() {
             <img src={tree} alt="img" />
           </div>
           <div className="curve-div">
-          <h3 className="h3-services">Plants Nutrients</h3>
+            <h3 className="h3-services">Plants Nutrients</h3>
             <p>
               You can also avail regular supply of plants and plant nutrients
               You can avail all these services even if you don't have scrap to
@@ -142,7 +142,7 @@ function Home() {
             <img src={decoration} alt="img" />
           </div>
           <div className="curve-div">
-          <h3 className="h3-services">Corporate Tie-Up</h3>
+            <h3 className="h3-services">Corporate Tie-Up</h3>
             <p>
               Regular collection of scrap with an option to get interior
               decoration of your office space with mesmerizing plants Or Gifting
@@ -171,10 +171,9 @@ function Home() {
             our commitment to integrity and sustainability, you can trust that
             you'll receive a fair value for your scrap materials when you choose
             DIN.
-
-            <span >
+            <span>
               <Link className="changepage" to="/ratelist">
-                 Click here for detailed scrap ratelist.
+                Click here for detailed scrap ratelist.
               </Link>
             </span>
           </p>
@@ -200,6 +199,11 @@ function Home() {
               its beauty and resilience, ensuring that you receive not only a
               valuable addition to your space but also a symbol of our shared
               dedication to a greener future.
+              <span>
+                <Link className="changepage" to="/plant">
+                  Check our plant list.
+                </Link>
+              </span>
             </p>
           </div>
         </div>
