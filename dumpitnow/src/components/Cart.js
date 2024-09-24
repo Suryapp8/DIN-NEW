@@ -3,25 +3,56 @@ import { Link } from "react-router-dom";
 import "../styles/cart.css"; // Assuming you add some styles for the cart page
 
 const Cart = ({ cart, setCart }) => {
+  // Group the cart items by name and calculate their quantities
+  const groupedCart = cart.reduce((acc, item) => {
+    const existingItem = acc.find((i) => i.name === item.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+      existingItem.totalPrice += item.price;
+    } else {
+      acc.push({ ...item, quantity: 1, totalPrice: item.price });
+    }
+    return acc;
+  }, []);
+
   // Function to handle item removal from cart
-  const removeFromCart = (index) => {
-    const updatedCart = cart.filter((_, i) => i !== index);
+  const removeFromCart = (name) => {
+    const updatedCart = cart.filter((item) => item.name !== name);
     setCart(updatedCart); // Update the cart after removing the item
   };
 
+  // Function to increase the quantity of an item
+  const increaseQuantity = (name) => {
+    const updatedCart = [...cart, cart.find((item) => item.name === name)];
+    setCart(updatedCart);
+  };
+
+  // Function to decrease the quantity of an item
+  const decreaseQuantity = (name) => {
+    const itemIndex = cart.findIndex((item) => item.name === name);
+    if (itemIndex > -1) {
+      const updatedCart = [...cart];
+      updatedCart.splice(itemIndex, 1); // Remove one instance of the item
+      setCart(updatedCart);
+    }
+  };
+
   // Calculate the total amount
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  const totalAmount = groupedCart.reduce(
+    (total, item) => total + item.totalPrice,
+    0
+  );
 
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
 
-      {cart.length === 0 ? (
+      {groupedCart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <>
           <ul className="cart-items">
-            {cart.map((item, index) => (
+            {groupedCart.map((item, index) => (
               <li key={index} className="cart-item">
                 <img
                   src={item.image}
@@ -32,9 +63,27 @@ const Cart = ({ cart, setCart }) => {
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
                   <p>
-                    <strong>Price:</strong> ₹{item.price}
+                    <strong>Price:</strong> ₹{item.price} x {item.quantity} = ₹
+                    {item.totalPrice}
                   </p>
-                  <button onClick={() => removeFromCart(index)}>Remove</button>
+
+                  {/* Quantity controls */}
+                  <div className="quantity-controls">
+                    <button
+                      onClick={() => decreaseQuantity(item.name)}
+                      disabled={item.quantity <= 1}
+                    >
+                      -
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => increaseQuantity(item.name)}>
+                      +
+                    </button>
+                  </div>
+
+                  <button onClick={() => removeFromCart(item.name)}>
+                    Remove
+                  </button>
                 </div>
               </li>
             ))}
@@ -53,7 +102,7 @@ const Cart = ({ cart, setCart }) => {
       </Link>
 
       {/* Proceed to Checkout button */}
-      {cart.length > 0 && (
+      {groupedCart.length > 0 && (
         <Link to="/checkout">
           <button className="proceed-checkout-btn">Proceed to Checkout</button>
         </Link>
