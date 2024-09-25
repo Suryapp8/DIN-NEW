@@ -61,20 +61,6 @@ const SupplyPage = ({ cart, setCart }) => {
           </div>
         ))}
       </div>
-
-      <div className="cart-summary">
-        <h3>Your Cart</h3>
-        <ul>
-          {addedProducts.map((item) => (
-            <li key={item.id}>
-              {item.name} x {item.quantity} kg {/* Show quantity in kg */}
-            </li>
-          ))}
-        </ul>
-        <Link to="/cart">
-          <button className="checkout-btn">Proceed to Cart</button>
-        </Link>
-      </div>
     </div>
   );
 };
