@@ -11,19 +11,21 @@ import Loading from "./components/Loading";
 import "./styles/App.css";
 import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
+import Supplies from "./components/Supplies";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]); // Cart state
 
-  const cartCount = cart.length;
+  const cartCount = cart.length; // Total count of cart items
 
+  // Simulate loading for 1 second
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Loading simulation
+    }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
 
   return (
@@ -33,14 +35,26 @@ function App() {
           <Loading />
         ) : (
           <>
-            {/* Navbar should only be here once */}
+            {/* Navbar - visible on all pages */}
             <Navbar cartCount={cartCount} />
+
+            {/* Routing for all pages */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/orderpage" element={<Order />} />
               <Route path="/ratelist" element={<Ratelist />} />
               <Route path="/payment" element={<Payment />} />
+              
+              {/* Supplies page should also handle adding to cart */}
+              <Route
+                path="/supplies"
+                element={<Supplies cart={cart} setCart={setCart} />}
+              />
+
+              {/* Checkout needs both cart and setCart */}
               <Route path="/checkout" element={<Checkout cart={cart} />} />
+
+              {/* Plant and Cart also need access to cart and setCart */}
               <Route
                 path="/plant"
                 element={<Plant setCart={setCart} cart={cart} />}
@@ -50,6 +64,8 @@ function App() {
                 element={<Cart cart={cart} setCart={setCart} />}
               />
             </Routes>
+
+            {/* Footer - visible on all pages */}
             <Footer />
           </>
         )}

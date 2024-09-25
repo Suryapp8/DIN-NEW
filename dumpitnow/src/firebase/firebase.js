@@ -12,6 +12,12 @@ const firebaseConfig = {
   measurementId: "G-BL8PPV4KDR",
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-export const firestore = firebase.firestore();
+// Firestore database
+const firestore = firebaseApp.firestore();
+
+// Export FieldValue for serverTimestamp usage
+const FieldValue = firebase.firestore.FieldValue;
+
+export { firestore, FieldValue };

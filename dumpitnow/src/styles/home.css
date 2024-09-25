@@ -1,5 +1,5 @@
 .home {
-  height: 60vh;
+  height: 67vh;
   background-color: #103813;
   background-image: url("../images/home.jpg");
   background-repeat: no-repeat;
@@ -12,10 +12,25 @@
 .home-cont {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: yellow;
   align-items: flex-start;
   padding-top: 20vh;
   margin-left: 10%;
+}
+
+#change-color,
+#change-color2 {
+  font-family: "Arial", sans-serif; /* Use a clean sans-serif font */
+  color: white; /* White text color for contrast */
+  text-align: center; /* Center align the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  letter-spacing: 2px; /* Spacing between letters for a more elegant look */
+}
+
+#change-color3 {
+  color: #e0f2f1; /* Lighter greenish color for the subheading */
+  text-align: center; /* Center align the subheading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .line-1 {
@@ -33,18 +48,36 @@
 }
 
 .din-btn {
-  font-size: 0.8rem;
-  color: rgb(45, 61, 12);
-  border: none;
-  font-weight: bolder;
-  background-color: white;
-  text-decoration: none;
-  padding: 3px;
+  font-size: 0.7rem; /* Slightly larger font size */
+  color: white; /* Change text color to white for contrast */
+  border: none; /* No border */
+  font-weight: bold; /* Ensure text is bold */
+  background: linear-gradient(
+    to right,
+    #4caf50,
+    #2e7d32
+  ); /* Gradient background */
+  text-decoration: none; /* No underline */
+  padding: 10px 20px; /* Increase padding for a more substantial look */
+  border-radius: 5px; /* Rounded corners */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .din-btn:hover {
-  background-color: #44ba00;
-  color: white;
+  background: linear-gradient(
+    to right,
+    #66bb6a,
+    #4caf50
+  ); /* Lighter gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.din-btn:active {
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reset shadow on click */
 }
 
 .div-1 {
@@ -188,10 +221,9 @@
   color: #ffffff;
 }
 
-.h3-services{
+.h3-services {
   font-size: 0.7rem;
   color: black;
- 
 }
 
 @media (max-width: 768px) {
@@ -200,10 +232,9 @@
     grid-template-columns: 2fr 2fr;
   }
 
-  .h3-services{
+  .h3-services {
     font-size: 0.5rem;
     color: black;
-    
   }
 
   .box-1 {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { firestore } from "../firebase/firebase.js";
+import { firestore, FieldValue } from "../firebase/firebase.js"; // Updated import for Firestore and FieldValue
 import "../styles/checkout.css";
 
 const Checkout = ({ cart = [] }) => {
@@ -15,6 +15,7 @@ const Checkout = ({ cart = [] }) => {
     country: "",
   });
 
+  // Group the cart items by name and calculate their quantities
   const groupedCart = cart.reduce((acc, item) => {
     const existingItem = acc.find((i) => i.name === item.name);
     if (existingItem) {
@@ -26,11 +27,13 @@ const Checkout = ({ cart = [] }) => {
     return acc;
   }, []);
 
+  // Calculate the total amount
   const totalAmount = groupedCart.reduce(
     (total, item) => total + item.totalPrice,
     0
   );
 
+  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -39,17 +42,26 @@ const Checkout = ({ cart = [] }) => {
     }));
   };
 
+  // Function to handle the Proceed to Payment
   const handleProceedToPayment = async () => {
+    console.log("Proceed to Payment clicked");
+    console.log("Form Data:", formData);
+    console.log("Total Amount:", totalAmount);
+
     try {
+      // Save the order to Firestore with a server timestamp
       await firestore.collection("orders").add({
         ...formData,
         cart: groupedCart,
         totalAmount,
-        createdAt: firestore.FieldValue.serverTimestamp(),
+        createdAt: FieldValue.serverTimestamp(), // Correct usage of serverTimestamp
       });
+      console.log("Order successfully saved to Firestore!");
+
+      // Navigate to the payment page and pass totalAmount via state
       navigate("/payment", { state: { totalAmount } });
     } catch (error) {
-      console.error("Error adding document: ", error);
+      console.error("Error saving order: ", error);
     }
   };
 
@@ -155,6 +167,7 @@ const Checkout = ({ cart = [] }) => {
               required
             />
           </label>
+
           <button
             type="button"
             className="proceed-payment-btn"

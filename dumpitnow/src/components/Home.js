@@ -57,10 +57,10 @@ function Home() {
   return (
     <>
       <div className="home">
-        <div className="home-cont">
-          <h3 className="line-1">STAY CLEAN</h3>
-          <h3 className="line-2">Go GREEN</h3>
-          <p className="line-3">Do You Have Waste Around You?</p>
+        <div  className="home-cont">
+          <h3 id="change-color" className="line-1">STAY CLEAN</h3>
+          <h3 id="change-color2" className="line-2">Go GREEN</h3>
+          <p id="change-color3" className="line-3">Do You Have Waste Around You?</p>
           <Link to="/orderpage" className="din-btn">
             DUMP IT NOW ?
           </Link>
@@ -147,7 +147,7 @@ function Home() {
               Regular collection of scrap with an option to get interior
               decoration of your office space with mesmerizing plants Or Gifting
               pots at regular intervals We also offer Bio-waste collection cum
-              management services.
+              management services.
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ function Home() {
           <h3>
             JOIN US
             <a
-              data-tooltip-id="my-tooltip"
+              data-tooltip-id="my-tooltip" href="#"
               data-tooltip-content="By joining us you can be our regular customer"
             >
               <img className="warning" src={warning} alt="warning-sign" />

@@ -23,10 +23,10 @@ function Navbar({ cartCount }) {
         </Link>
       </div>
 
-      {location.pathname === "/" ? (
-        <>
-          <div className={`menu ${menuOpen ? "active" : ""}`}>
-            <ul className="nav-links">
+      <div className={`menu ${menuOpen ? "active" : ""}`}>
+        <ul className="nav-links">
+          {location.pathname === "/" ? (
+            <>
               <li className="links">
                 <a href="#about" onClick={closeMenu}>
                   About
@@ -38,43 +38,40 @@ function Navbar({ cartCount }) {
                 </Link>
               </li>
               <li className="links">
-                <Link to="/plant" onClick={closeMenu}>
-                  Plants
-                </Link>
-              </li>
-              <li className="links">
                 <a href="#valuate" onClick={closeMenu}>
                   How we valuate
                 </a>
-              </li>
-              <li className="links">
-                <Link to="/supplies" onClick={closeMenu}>
-                  Supplies
-                </Link>
               </li>
               <li className="links">
                 <a href="#contact" onClick={closeMenu}>
                   Contact
                 </a>
               </li>
-              <li className="links cart">
-                <Link to="/cart" onClick={closeMenu}>
-                  🛒 Cart ({cartCount})
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="hamburger" onClick={toggleMenu}>
-            ☰{cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-          </div>
-        </>
-      ) : (
-        <div className="cart-only">
-          <Link to="/cart" className="onlyhomecart" onClick={closeMenu}>
-            🛒 Your Garden ({cartCount})
-          </Link>
-        </div>
-      )}
+            </>
+          ) : null}
+          <li className="links">
+            <Link to="/plant" onClick={closeMenu}>
+              Plants
+            </Link>
+          </li>
+          <li className="links">
+            <Link to="/supplies" onClick={closeMenu}>
+              Supplies
+            </Link>
+          </li>
+          <li className="links cart">
+            <Link to="/cart" onClick={closeMenu}>
+              🛒 Cart ({cartCount})
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+        {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+      </div>
     </nav>
   );
 }

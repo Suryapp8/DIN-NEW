@@ -4,10 +4,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Ensure space between logo and other items */
-  background-color: black;
+  background: linear-gradient(to right, #09150a, #0a4e0d); /* Green gradient background */
   color: white;
   padding: 0 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow for better separation */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 .logo-cont {
@@ -19,7 +24,7 @@ nav {
   cursor: pointer;
 }
 
-.onlyhomecart{
+.onlyhomecart {
   text-decoration: none;
   color: white;
 }
@@ -38,34 +43,60 @@ nav {
 }
 
 .links {
-  margin-left: auto; /* Push links to the right */
+  margin-left: 1rem; /* Adjust margin for spacing between links */
 }
 
-.links > a {
-  text-decoration: none;
-  color: white;
-  margin: 0 1rem; /* Margin between links */
-  cursor: pointer;
-}
-
+.links > a,
 .links > Link {
   text-decoration: none;
   color: white;
   margin: 0 1rem; /* Margin between links */
   cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for color */
 }
 
-
-.links > a:hover {
-  color: green; /* Hover effect */
+.links > a:hover,
+.links > Link:hover {
+  color: rgb(24, 17, 24); /* Lighter green color on hover */
 }
 
 /* Styles for hamburger menu */
 .hamburger {
   display: none; /* Hidden by default */
-  font-size: 1.5rem;
-  user-select: none;
+  flex-direction: column; /* Stack the lines vertically */
+  justify-content: space-around; /* Space them evenly */
+  width: 30px; /* Width of the hamburger */
+  height: 24px; /* Height of the hamburger */
+  background-color: transparent; /* No background */
+  border: none; /* No border */
   cursor: pointer; /* Change cursor on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.hamburger div {
+  width: 100%; /* Full width for the lines */
+  height: 3px; /* Thickness of the lines */
+  background-color: white; /* Color of the lines */
+  border-radius: 5px; /* Rounded corners for lines */
+  transition: all 0.3s ease; /* Smooth transition for each line */
+}
+
+/* Add hover effect */
+.hamburger:hover div {
+  background-color: #e0f2f1; /* Change color on hover */
+}
+
+/* When the menu is open */
+.hamburger.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Rotate the first line */
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Rotate the last line */
 }
 
 /* Mobile styles */
@@ -103,13 +134,15 @@ nav {
     padding: 1rem 0; /* Padding for each link */
   }
 
-  .links > a {
+  .links > a,
+  .links > Link {
     color: black; /* Change text color to black */
   }
 
   .hamburger {
-    display: block; /* Show hamburger icon on mobile */
+    display: flex; /* Show hamburger icon on mobile */
     margin-left: auto; /* Align to the right */
+    z-index: 4; /* Ensure it is above other elements */
   }
 
   /* Cart count styles for the hamburger icon */
