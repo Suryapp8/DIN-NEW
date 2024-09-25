@@ -1,11 +1,20 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../styles/checkout.css"; // Assuming you add some styles for the checkout page
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { firestore } from "../firebase/firebase.js";
+import "../styles/checkout.css";
 
 const Checkout = ({ cart = [] }) => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    country: "",
+  });
 
-  // Group the cart items by name and calculate their quantities
   const groupedCart = cart.reduce((acc, item) => {
     const existingItem = acc.find((i) => i.name === item.name);
     if (existingItem) {
@@ -17,14 +26,31 @@ const Checkout = ({ cart = [] }) => {
     return acc;
   }, []);
 
-  // Calculate the total amount
   const totalAmount = groupedCart.reduce(
     (total, item) => total + item.totalPrice,
     0
   );
 
-  const handleProceedToPayment = () => {
-    navigate("/payment", { state: { totalAmount } });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleProceedToPayment = async () => {
+    try {
+      await firestore.collection("orders").add({
+        ...formData,
+        cart: groupedCart,
+        totalAmount,
+        createdAt: firestore.FieldValue.serverTimestamp(),
+      });
+      navigate("/payment", { state: { totalAmount } });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
 
   return (
@@ -61,31 +87,73 @@ const Checkout = ({ cart = [] }) => {
         <form>
           <label>
             Full Name:
-            <input type="text" name="name" required />
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             Email:
-            <input type="email" name="email" required />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             Address:
-            <input type="text" name="address" required />
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             City:
-            <input type="text" name="city" required />
+            <input
+              type="text"
+              name="city"
+              value={formData.city}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             State:
-            <input type="text" name="state" required />
+            <input
+              type="text"
+              name="state"
+              value={formData.state}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             Zip Code:
-            <input type="text" name="zip" required />
+            <input
+              type="text"
+              name="zip"
+              value={formData.zip}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <label>
             Country:
-            <input type="text" name="country" required />
+            <input
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleInputChange}
+              required
+            />
           </label>
           <button
             type="button"

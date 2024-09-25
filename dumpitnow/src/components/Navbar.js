@@ -59,7 +59,7 @@ function Navbar({ cartCount }) {
               </li>
               <li className="links cart">
                 <Link to="/cart" onClick={closeMenu}>
-                  🛒 ({cartCount})
+                  🛒 Cart ({cartCount})
                 </Link>
               </li>
             </ul>
