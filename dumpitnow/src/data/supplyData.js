@@ -1,6 +1,8 @@
 // src/data/products.js
 
 import vermicompostImage from "../images/VermiCommix.jpg"; // Import the image
+import decNeemo from "../images/DecNeemo.jpg"; // Import the image
+import DecMori from "../images/DecMori.jpg"; // Import the image
 
 export const products = [
   {
@@ -28,7 +30,7 @@ export const products = [
     description:
       "Liquid fertilizer for protecting plants from pests, enhancing soil richness.",
     price: 400,
-    image: vermicompostImage,
+    image: decNeemo,
   },
   {
     id: 4,
@@ -37,6 +39,6 @@ export const products = [
     description:
       "Bio-fertilizer with Moringa for enhanced growth and nutrient intake.",
     price: 450,
-    image: vermicompostImage,
+    image: DecMori,
   },
 ];

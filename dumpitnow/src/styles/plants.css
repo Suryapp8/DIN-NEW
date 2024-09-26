@@ -21,16 +21,16 @@
 }
 
 .plant-card {
+  position: relative;
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s;
-  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plant-card:hover {
-  transform: scale(1.05);
-}
 
 .plant-image {
   max-width: 100%;
@@ -97,4 +97,41 @@ li {
   outline: none;
   background-color: #2c3e50;
   color: white;
+}
+
+
+.plant-card:hover {
+  transform: scale(1.03); /* Scale by 3% */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add some shadow on hover for effect */
+}
+
+.plant-description,
+.plant-sunlight,
+.plant-features {
+  max-height: 60px; /* Limit the visible height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-height 0.3s ease, white-space 0.3s ease;
+}
+
+.plant-card:hover .plant-description,
+.plant-card:hover .plant-sunlight,
+.plant-card:hover .plant-features {
+  max-height: 100px; /* Expand a bit on hover, but not too much */
+  white-space: normal; /* Allow text wrapping */
+  overflow-y: auto; /* Add scrolling if the content is too long */
+}
+
+.plant-card .description-overlay,
+.plant-card .sunlight-overlay,
+.plant-card .features-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.plant-card:hover .description-overlay,
+.plant-card:hover .sunlight-overlay,
+.plant-card:hover .features-overlay {
+  max-height: 100px; /* Adjust max height for smooth transition */
 }

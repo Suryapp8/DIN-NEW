@@ -13,7 +13,9 @@ const Plant = ({ cart, setCart }) => {
   // Function to filter plants based on the selected filter
   const filteredPlants = plantDetails.filter((plant) => {
     if (filter === "all") return true;
-    return plant.usage === filter;
+    return Array.isArray(plant.usage) 
+      ? plant.usage.includes(filter) 
+      : plant.usage === filter;
   });
 
   return (
@@ -32,9 +34,28 @@ const Plant = ({ cart, setCart }) => {
           <div key={index} className="plant-card">
             <img src={plant.image} alt={plant.name} className="plant-image" />
             <h3>{plant.name}</h3>
-            <p>{plant.description}</p>
+
+            {/* Description Container */}
+            <div className="description-overlay">
+              <p className="plant-description">{plant.description}</p>
+            </div>
+
+            {/* Sunlight Container */}
+            <div className="sunlight-overlay">
+              <p className="plant-sunlight">
+                <strong>Sunlight:</strong> {plant.sunlight}
+              </p>
+            </div>
+
+            {/* Features Container */}
+            <div className="features-overlay">
+              <p className="plant-features">
+                <strong>Features:</strong> {plant.features}
+              </p>
+            </div>
+
             <p>
-              <strong>Sunlight:</strong> {plant.sunlight}
+              <strong>Watering:</strong> {plant.watering}
             </p>
             {plant.plantHeight && (
               <p>
