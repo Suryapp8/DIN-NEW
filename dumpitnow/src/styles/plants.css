@@ -135,3 +135,11 @@ li {
 .plant-card:hover .features-overlay {
   max-height: 100px; /* Adjust max height for smooth transition */
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .plant-card {
+    width: 90%; /* Make the card wider on small screens */
+    margin: 20px auto; /* Center the card on mobile */
+  }
+}
