@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import plantDetails from "../data/plantData";
 import "../styles/plants.css";
 
@@ -6,15 +6,18 @@ const Plant = ({ cart, setCart }) => {
   const [filter, setFilter] = useState("all");
 
   // Function to handle adding plants to the cart
-  const addToCart = (plant) => {
-    setCart([...cart, plant]);
-  };
+  const addToCart = useCallback((plant) => {
+    setCart((prevCart) => [
+      ...prevCart,
+      { ...plant, price: parseFloat(plant.price.replace(/[₹\s]/g, "")) }
+    ]);
+  }, [setCart]);
 
   // Function to filter plants based on the selected filter
   const filteredPlants = plantDetails.filter((plant) => {
     if (filter === "all") return true;
-    return Array.isArray(plant.usage) 
-      ? plant.usage.includes(filter) 
+    return Array.isArray(plant.usage)
+      ? plant.usage.includes(filter)
       : plant.usage === filter;
   });
 

@@ -44,20 +44,14 @@ function App() {
               <Route path="/orderpage" element={<Order />} />
               <Route path="/ratelist" element={<Ratelist />} />
               <Route path="/payment" element={<Payment />} />
-              
-              {/* Supplies page should also handle adding to cart */}
               <Route
                 path="/supplies"
                 element={<Supplies cart={cart} setCart={setCart} />}
               />
-
-              {/* Checkout needs both cart and setCart */}
               <Route path="/checkout" element={<Checkout cart={cart} />} />
-
-              {/* Plant and Cart also need access to cart and setCart */}
               <Route
                 path="/plant"
-                element={<Plant setCart={setCart} cart={cart} />}
+                element={<Plant cart={cart} setCart={setCart} />}
               />
               <Route
                 path="/cart"

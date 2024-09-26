@@ -6,11 +6,15 @@ const Cart = ({ cart, setCart }) => {
   // Group the cart items by name and calculate their quantities
   const groupedCart = cart.reduce((acc, item) => {
     const existingItem = acc.find((i) => i.name === item.name);
+    const itemPrice =
+      typeof item.price === "string"
+        ? parseFloat(item.price.replace(/[₹\s]/g, ""))
+        : item.price;
     if (existingItem) {
-      existingItem.quantity += 1;
-      existingItem.totalPrice += item.price;
+      existingItem.quantity += 1; // Increment quantity
+      existingItem.totalPrice += itemPrice; // Update totalPrice
     } else {
-      acc.push({ ...item, quantity: 1, totalPrice: item.price });
+      acc.push({ ...item, quantity: 1, totalPrice: itemPrice }); // Initialize totalPrice
     }
     return acc;
   }, []);
@@ -18,23 +22,41 @@ const Cart = ({ cart, setCart }) => {
   // Function to handle item removal from cart
   const removeFromCart = (name) => {
     const updatedCart = cart.filter((item) => item.name !== name);
-    setCart(updatedCart); // Update the cart after removing the item
+    setCart(updatedCart);
   };
 
   // Function to increase the quantity of an item
   const increaseQuantity = (name) => {
-    const updatedCart = [...cart, cart.find((item) => item.name === name)];
-    setCart(updatedCart);
+    const updatedCart = cart.map((item) => {
+      if (item.name === name) {
+        const newQuantity = item.quantity + 1; // Increase quantity
+        const itemPrice =
+          typeof item.price === "string"
+            ? parseFloat(item.price.replace(/[₹\s]/g, ""))
+            : item.price;
+        const newTotalPrice = itemPrice * newQuantity; // Update totalPrice
+        return { ...item, quantity: newQuantity, totalPrice: newTotalPrice }; // Update totalPrice
+      }
+      return item; // Return unchanged item
+    });
+    setCart(updatedCart); // Update state
   };
 
   // Function to decrease the quantity of an item
   const decreaseQuantity = (name) => {
-    const itemIndex = cart.findIndex((item) => item.name === name);
-    if (itemIndex > -1) {
-      const updatedCart = [...cart];
-      updatedCart.splice(itemIndex, 1); // Remove one instance of the item
-      setCart(updatedCart);
-    }
+    const updatedCart = cart.map((item) => {
+      if (item.name === name) {
+        const newQuantity = item.quantity > 1 ? item.quantity - 1 : 1; // Prevent quantity from going below 1
+        const itemPrice =
+          typeof item.price === "string"
+            ? parseFloat(item.price.replace(/[₹\s]/g, ""))
+            : item.price;
+        const newTotalPrice = itemPrice * newQuantity; // Update totalPrice
+        return { ...item, quantity: newQuantity, totalPrice: newTotalPrice }; // Update totalPrice
+      }
+      return item; // Return unchanged item
+    });
+    setCart(updatedCart); // Update state
   };
 
   // Calculate the total amount
@@ -64,7 +86,7 @@ const Cart = ({ cart, setCart }) => {
                   <p>{item.description}</p>
                   <p>
                     <strong>Price:</strong> ₹{item.price} x {item.quantity} = ₹
-                    {item.totalPrice}
+                    {item.totalPrice.toFixed(2)} {/* Display totalPrice */}
                   </p>
 
                   {/* Quantity controls */}
@@ -91,7 +113,7 @@ const Cart = ({ cart, setCart }) => {
 
           {/* Display the total amount */}
           <div className="cart-total">
-            <h3>Total Amount: ₹{totalAmount}</h3>
+            <h3>Total Amount: ₹{totalAmount.toFixed(2)}</h3>
           </div>
         </>
       )}
