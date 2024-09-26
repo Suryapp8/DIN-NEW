@@ -73,7 +73,7 @@ h3 {
   box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-.address-form button {
+.address-form .button {
   padding: 0.75rem;
   font-size: 1rem;
   background-color: #28a745;
@@ -84,6 +84,6 @@ h3 {
   margin-top: 1rem;
 }
 
-.address-form button:hover {
+.address-form .button:hover {
   background-color: #218838;
 }

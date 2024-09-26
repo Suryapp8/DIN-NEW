@@ -57,10 +57,16 @@ function Home() {
   return (
     <>
       <div className="home">
-        <div  className="home-cont">
-          <h3 id="change-color" className="line-1">STAY CLEAN</h3>
-          <h3 id="change-color2" className="line-2">Go GREEN</h3>
-          <p id="change-color3" className="line-3">Do You Have Waste Around You?</p>
+        <div className="home-cont">
+          <h3 id="change-color" className="line-1">
+            STAY CLEAN
+          </h3>
+          <h3 id="change-color2" className="line-2">
+            Go GREEN
+          </h3>
+          <p id="change-color3" className="line-3">
+            Do You Have Waste Around You?
+          </p>
           <Link to="/orderpage" className="din-btn">
             DUMP IT NOW ?
           </Link>
@@ -88,7 +94,7 @@ function Home() {
             Per The Value Of Your Scrap.
           </p>
           <Link to="about">
-            <button className="learn-btn">LEARN MORE</button>
+            <button id="learn-btn">LEARN MORE</button>
           </Link>
         </div>
       </div>
@@ -216,7 +222,8 @@ function Home() {
           <h3>
             JOIN US
             <a
-              data-tooltip-id="my-tooltip" href="#"
+              data-tooltip-id="my-tooltip"
+              href="#"
               data-tooltip-content="By joining us you can be our regular customer"
             >
               <img className="warning" src={warning} alt="warning-sign" />
@@ -248,7 +255,7 @@ function Home() {
                 onChange={handlePhone}
                 required
               />
-              <button type="submit">Join us</button>
+              <button id="join-btn" type="submit">Join us</button>
             </div>
           </form>
           <Modal
@@ -259,7 +266,9 @@ function Home() {
           >
             <h2>Thank you for joining us!</h2>
             <p>You are now part of Dump It Now.</p>
-            <button onClick={() => setModalIsOpen(false)}>Close</button>
+            <button  onClick={() => setModalIsOpen(false)}>
+              Close
+            </button>
           </Modal>
         </div>
       </div>

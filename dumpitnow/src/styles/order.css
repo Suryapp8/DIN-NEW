@@ -59,10 +59,11 @@ label {
 
 .schedule {
   height: 2.5rem;
-  margin: 1rem 0 1rem 30%;
+  margin: 1rem 0 1rem 10%;
   border: none;
   font-size: large;
   font-weight: 600;
+  width: 80%;
 }
 
 .services-container {

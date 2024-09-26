@@ -78,14 +78,14 @@ const Cart = ({ cart, setCart }) => {
 
                   {/* Quantity controls */}
                   <div className="quantity-controls">
-                    <button
+                    <button className="button"
                       onClick={() => decreaseQuantity(item.name)}
                       disabled={item.quantity <= 1}
                     >
                       -
                     </button>
                     <span>{item.quantity}</span>
-                    <button onClick={() => increaseQuantity(item.name)}>
+                    <button className="button" onClick={() => increaseQuantity(item.name)}>
                       +
                     </button>
                   </div>
@@ -107,13 +107,13 @@ const Cart = ({ cart, setCart }) => {
 
       {groupedCart.length > 0 && (
         <Link to="/checkout">
-          <button className="proceed-checkout-btn">Proceed to Checkout</button>
+          <button className="proceed-checkout-btn button">Proceed to Checkout</button>
         </Link>
       )}
 
       {/* Button to continue shopping */}
       <Link to="/plant">
-        <button className="continue-shopping-btn">Continue Shopping</button>
+        <button className="continue-shopping-btn button">Continue Shopping</button>
       </Link>
 
       {/* Proceed to Checkout button */}

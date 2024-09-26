@@ -143,10 +143,12 @@
   color: rgb(45, 61, 12);
 }
 
-.learn-btn {
+#learn-btn {
   background-color: #2ca729;
+  margin-left: 30%;
   color: white;
   border: none;
+  width: 25%;
 }
 
 .learn-btn:hover {
@@ -161,6 +163,10 @@
     width: 60%;
     font-size: 0.5rem;
     color: rgb(45, 61, 12);
+  }
+  #learn-btn {
+    width: 80%;
+    margin-left: 10%;
   }
 }
 
@@ -395,10 +401,21 @@
   width: 2rem;
 }
 
+#join-btn {
+  font-size: 0.9rem;
+  width: 40%;
+  padding: 0 2rem;
+  height: 1.8rem;
+}
+
 @media (max-width: 768px) {
   .warning {
     margin-left: 1rem;
     height: 1rem;
     width: 1rem;
+  }
+  #join-btn {
+    width: 80%;
+    height: 1.5rem;
   }
 }

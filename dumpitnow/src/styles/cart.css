@@ -58,7 +58,7 @@
 }
 
 /* Updated Quantity Controls - Square Buttons */
-.quantity-controls button {
+.quantity-controls .button {
   background-color: #27ae60;
   color: white;
   border: none;
@@ -73,7 +73,7 @@
   align-items: center;
 }
 
-.quantity-controls button:hover {
+.quantity-controls .button:hover {
   background-color: #2ecc71;
 }
 
@@ -85,7 +85,7 @@
 }
 
 /* Cart Buttons */
-button {
+.button {
   background-color: #27ae60;
   color: white;
   border: none;
@@ -97,7 +97,7 @@ button {
   margin-bottom: 0.5rem;
 }
 
-button:hover {
+.button:hover {
   background-color: #2ecc71;
 }
 
@@ -162,7 +162,7 @@ button:hover {
     margin-top: 0;
   }
 
-  button {
+  .button {
     margin-left: 20px;
     margin-top: 0;
   }
@@ -200,7 +200,7 @@ button:hover {
   }
 
   /* Mobile-specific button sizing */
-  .quantity-controls button {
+  .quantity-controls .button {
     width: 30px; /* Slightly smaller for mobile */
     height: 30px;
     font-size: 1rem; /* Adjust font size */
