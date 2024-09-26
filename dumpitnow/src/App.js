@@ -8,10 +8,10 @@ import Plant from "./components/Plant";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
-import "./styles/App.css";
 import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
 import Supplies from "./components/Supplies";
+import "./styles/App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -44,11 +44,17 @@ function App() {
               <Route path="/orderpage" element={<Order />} />
               <Route path="/ratelist" element={<Ratelist />} />
               <Route path="/payment" element={<Payment />} />
+
+              {/* Supplies page should also handle adding to cart */}
               <Route
                 path="/supplies"
                 element={<Supplies cart={cart} setCart={setCart} />}
               />
+
+              {/* Checkout needs both cart and setCart */}
               <Route path="/checkout" element={<Checkout cart={cart} />} />
+
+              {/* Plant and Cart need access to cart and setCart */}
               <Route
                 path="/plant"
                 element={<Plant cart={cart} setCart={setCart} />}

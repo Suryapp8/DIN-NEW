@@ -12,9 +12,9 @@ const Checkout = ({ cart = [] }) => {
     city: "",
     state: "",
     zip: "",
-    country: "",
   });
 
+  // Group cart items by name and calculate total price
   const groupedCart = cart.reduce((acc, item) => {
     const existingItem = acc.find((i) => i.name === item.name);
     if (existingItem) {
@@ -31,6 +31,7 @@ const Checkout = ({ cart = [] }) => {
     0
   );
 
+  // Update form data on input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -39,6 +40,7 @@ const Checkout = ({ cart = [] }) => {
     }));
   };
 
+  // Handle Proceed to Payment button click
   const handleProceedToPayment = async () => {
     console.log("Proceed to Payment clicked");
     console.log("Form Data:", formData);
@@ -49,7 +51,7 @@ const Checkout = ({ cart = [] }) => {
         ...formData,
         cart: groupedCart,
         totalAmount,
-        createdAt: firestore.FieldValue.serverTimestamp(),
+        createdAt: new Date(), // Use `new Date()` if `firestore.FieldValue.serverTimestamp()` is causing issues
       });
       console.log("Document successfully written!");
       navigate("/payment", { state: { totalAmount } });
@@ -146,16 +148,6 @@ const Checkout = ({ cart = [] }) => {
               type="text"
               name="zip"
               value={formData.zip}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            Country:
-            <input
-              type="text"
-              name="country"
-              value={formData.country}
               onChange={handleInputChange}
               required
             />

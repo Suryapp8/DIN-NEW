@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/cart.css"; // Assuming you add some styles for the cart page
+import "../styles/cart.css"; // Assuming you have some styles for the cart page
 
 const Cart = ({ cart, setCart }) => {
   // Group the cart items by name and calculate their quantities
@@ -19,44 +19,31 @@ const Cart = ({ cart, setCart }) => {
     return acc;
   }, []);
 
-  // Function to handle item removal from cart
-  const removeFromCart = (name) => {
-    const updatedCart = cart.filter((item) => item.name !== name);
-    setCart(updatedCart);
-  };
-
   // Function to increase the quantity of an item
   const increaseQuantity = (name) => {
     const updatedCart = cart.map((item) => {
       if (item.name === name) {
-        const newQuantity = item.quantity + 1; // Increase quantity
-        const itemPrice =
-          typeof item.price === "string"
-            ? parseFloat(item.price.replace(/[₹\s]/g, ""))
-            : item.price;
-        const newTotalPrice = itemPrice * newQuantity; // Update totalPrice
-        return { ...item, quantity: newQuantity, totalPrice: newTotalPrice }; // Update totalPrice
+        return { ...item }; // Add it again to update quantity
       }
-      return item; // Return unchanged item
+      return item;
     });
-    setCart(updatedCart); // Update state
+    setCart([...updatedCart, { ...cart.find((item) => item.name === name) }]); // Push a new instance to cart
   };
 
   // Function to decrease the quantity of an item
   const decreaseQuantity = (name) => {
-    const updatedCart = cart.map((item) => {
-      if (item.name === name) {
-        const newQuantity = item.quantity > 1 ? item.quantity - 1 : 1; // Prevent quantity from going below 1
-        const itemPrice =
-          typeof item.price === "string"
-            ? parseFloat(item.price.replace(/[₹\s]/g, ""))
-            : item.price;
-        const newTotalPrice = itemPrice * newQuantity; // Update totalPrice
-        return { ...item, quantity: newQuantity, totalPrice: newTotalPrice }; // Update totalPrice
-      }
-      return item; // Return unchanged item
+    const updatedCart = cart.filter((item, index) => {
+      return (
+        item.name !== name || index !== cart.findIndex((i) => i.name === name)
+      );
     });
-    setCart(updatedCart); // Update state
+    setCart(updatedCart); // Remove one instance of the item
+  };
+
+  // Function to handle item removal from cart
+  const removeFromCart = (name) => {
+    const updatedCart = cart.filter((item) => item.name !== name);
+    setCart(updatedCart);
   };
 
   // Calculate the total amount
@@ -118,17 +105,18 @@ const Cart = ({ cart, setCart }) => {
         </>
       )}
 
+      {groupedCart.length > 0 && (
+        <Link to="/checkout">
+          <button className="proceed-checkout-btn">Proceed to Checkout</button>
+        </Link>
+      )}
+
       {/* Button to continue shopping */}
       <Link to="/plant">
         <button className="continue-shopping-btn">Continue Shopping</button>
       </Link>
 
       {/* Proceed to Checkout button */}
-      {groupedCart.length > 0 && (
-        <Link to="/checkout">
-          <button className="proceed-checkout-btn">Proceed to Checkout</button>
-        </Link>
-      )}
     </div>
   );
 };
