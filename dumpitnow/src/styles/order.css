@@ -3,7 +3,6 @@
   background: url(../images/orderpage.jpg);
 
   background-size: cover; /* Use 'contain' to make the image fit entirely within the container */
-
 }
 
 .form {
@@ -12,8 +11,8 @@
   justify-content: space-evenly;
   width: 50%;
   position: absolute;
-  height: 60vh;
-  top: 58%;
+  height: 50vh;
+  top: 50%;
   z-index: 2;
   left: 50%;
   transform: translate(-50%, -50%);

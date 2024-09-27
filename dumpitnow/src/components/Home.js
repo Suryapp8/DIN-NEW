@@ -93,9 +93,7 @@ function Home() {
             Best Thing Is You Will Get Beautiful Trees And Gardening Products As
             Per The Value Of Your Scrap.
           </p>
-          <Link to="about">
-            <button id="learn-btn">LEARN MORE</button>
-          </Link>
+          
         </div>
       </div>
 

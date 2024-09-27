@@ -38,7 +38,7 @@ function Footer() {
 
       <div className="part-4">
         <h3>Contact</h3>
-        <a className="remove-underline" href="">+91-7007614802</a>
+        <a className="remove-underline" href="tel:7007315655">+91-7007315655</a>
         <a className="remove-underline" href="">fertilesource@gmail.com</a>
         <a className="remove-underline" href="">Review</a>
       </div>

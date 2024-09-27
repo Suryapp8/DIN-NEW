@@ -48,7 +48,7 @@
 }
 
 .din-btn {
-  font-size: 0.7rem; /* Slightly larger font size */
+  font-size: 1rem; /* Slightly larger font size */
   color: white; /* Change text color to white for contrast */
   border: none; /* No border */
   font-weight: bold; /* Ensure text is bold */
@@ -97,6 +97,10 @@
 }
 
 @media (max-width: 768px) {
+  .din-btn {
+    width: 50%;
+    font-size: 1rem;
+  }
   .home {
     height: 40vh;
   }
