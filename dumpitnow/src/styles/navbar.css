@@ -1,26 +1,18 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
 nav {
   height: 4rem;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to right, #09150a, #0a4e0d);
+  justify-content: space-between; /* Ensure space between logo and other items */
+  background: linear-gradient(to right, #09150a, #0a4e0d); /* Green gradient background */
   color: white;
   padding: 0 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow for better separation */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 .logo-cont {
@@ -52,11 +44,6 @@ nav {
 
 .links {
   margin-left: 1rem; /* Adjust margin for spacing between links */
-}
-
-.content {
-  margin-top: 4.5rem; /* Offset for the fixed navbar */
-  padding: 20px;
 }
 
 .links > a,
