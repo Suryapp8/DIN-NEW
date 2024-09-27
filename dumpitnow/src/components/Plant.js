@@ -23,7 +23,7 @@ const Plant = ({ cart, setCart }) => {
 
   return (
     <div className="plants-container">
-      <h2>Plants Available for Waste Exchange</h2>
+      <h2>Plants Available for Waste Exchange and Purchase</h2>
 
       {/* Filter Buttons */}
       <div className="filter-buttons">

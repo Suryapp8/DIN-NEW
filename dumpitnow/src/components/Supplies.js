@@ -44,7 +44,7 @@ const SupplyPage = ({ cart, setCart }) => {
 
   return (
     <div className="supply-page">
-      <h2>Order Supplies</h2>
+      <h2>Fertilisers</h2>
       <div className="products-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">

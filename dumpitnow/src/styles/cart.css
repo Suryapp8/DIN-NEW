@@ -1,7 +1,7 @@
 /* General Cart Styles */
 .cart-container {
   max-width: 900px;
-  margin: 0 auto;
+  margin-top: 4rem;
   padding: 20px;
   text-align: center;
   min-height: 80vh;
