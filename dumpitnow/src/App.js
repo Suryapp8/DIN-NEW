@@ -27,8 +27,7 @@ function App() {
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
-
-  return (
+ return (
     <div className="App">
       <BrowserRouter>
         {loading ? (
