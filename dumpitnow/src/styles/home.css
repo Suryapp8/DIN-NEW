@@ -423,3 +423,119 @@
     height: 1.5rem;
   }
 }
+
+@media (max-width: 380px) {
+  .home {
+    height: 35vh;
+  }
+
+  .home-cont {
+    padding-top: 4rem;
+    margin-left: 5%;
+  }
+
+  #change-color,
+  #change-color2 {
+    font-size: 1.2rem; /* Reduce font size */
+    letter-spacing: 1px; /* Slightly reduce letter spacing */
+  }
+
+  .line-1 {
+    font-size: 1.5rem;
+  }
+
+  .line-2 {
+    font-size: 2rem;
+  }
+
+  .div-1 {
+    top: 18rem;
+    width: 90%;
+    height: 10vh;
+    font-size: 1rem;
+  }
+
+  .div-2 {
+    width: 100%;
+    margin-top: 2rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .about-div {
+    width: 100%;
+    font-size: 0.6rem;
+  }
+
+  .din-btn {
+    width: 60%;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  #learn-btn {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .slides {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .box-1 {
+    width: 90%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .img-div > img {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .valuate-div {
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .valuate-para {
+    font-size: 0.6rem;
+    width: 90%;
+    padding: 0.5rem;
+  }
+
+  .plant-img {
+    width: 80%;
+    height: auto;
+  }
+
+  .supplies-div {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-div,
+  .right-div {
+    width: 100%;
+  }
+
+  .right-div {
+    background-size: contain;
+  }
+
+  .dust > img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  #join-btn {
+    width: 90%;
+    height: 1.4rem;
+  }
+
+  .warning {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

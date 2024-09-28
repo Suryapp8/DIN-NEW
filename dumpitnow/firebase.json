@@ -17,6 +17,11 @@
         "source": "/",
         "destination": "https://www.dumpitnow.in",
         "type": 301
+      },
+      {
+        "source": "https://dumpitnow.in/**",
+        "destination": "https://www.dumpitnow.in",
+        "type": 301
       }
     ]
   }
