@@ -11,6 +11,7 @@ import Loading from "./components/Loading";
 import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
 import Supplies from "./components/Supplies";
+import InfoPage from "./components/InfoPage";
 import "./styles/App.css";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
- return (
+  return (
     <div className="App">
       <BrowserRouter>
         {loading ? (
@@ -62,6 +63,10 @@ function App() {
                 path="/cart"
                 element={<Cart cart={cart} setCart={setCart} />}
               />
+              <Route path="/faq" element={<InfoPage />} />
+              <Route path="/review" element={<InfoPage />} />
+              <Route path="/privacy-policy" element={<InfoPage />} />
+              <Route path="/terms-of-use" element={<InfoPage />} />
             </Routes>
 
             {/* Footer - visible on all pages */}

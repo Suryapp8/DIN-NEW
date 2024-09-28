@@ -1,0 +1,19 @@
+/* InfoPage CSS */
+.info-page {
+  height: 80vh;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.info-page h2 {
+  
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
