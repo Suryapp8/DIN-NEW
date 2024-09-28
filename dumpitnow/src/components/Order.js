@@ -17,7 +17,7 @@ function OrderPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const ref = collection(firestore, "Order-Details");
+    const ref = collection(firestore, "Pick-Up");
     let data = {
       user,
       email,
@@ -73,7 +73,8 @@ function OrderPage() {
         <form onSubmit={handleSubmit} className="form form-style-3">
           <div className="form-field">
             <label for="field1">
-              Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp;&nbsp;
               <input
                 type="name"
                 placeholder="Enter your name"
@@ -85,7 +86,8 @@ function OrderPage() {
           </div>
           <div className="form-field">
             <label>
-              Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+              Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp;&nbsp;&nbsp;
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -97,7 +99,8 @@ function OrderPage() {
           </div>
           <div className="form-field">
             <label>
-              Phone:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              Phone: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
               <input
                 type="number"
                 placeholder="Enter your phone number"
@@ -134,7 +137,8 @@ function OrderPage() {
           </div>
           <div className="form-field">
             <label>
-              City: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              City: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input
                 type="name"
                 placeholder="Enter your city"

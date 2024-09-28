@@ -13,6 +13,7 @@ import Payment from "./components/Payment";
 import Supplies from "./components/Supplies";
 import InfoPage from "./components/InfoPage";
 import "./styles/App.css";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -63,6 +64,7 @@ function App() {
                 path="/cart"
                 element={<Cart cart={cart} setCart={setCart} />}
               />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/faq" element={<InfoPage />} />
               <Route path="/review" element={<InfoPage />} />
               <Route path="/privacy-policy" element={<InfoPage />} />
