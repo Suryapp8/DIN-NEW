@@ -174,7 +174,7 @@ function Home() {
             assesses each item to ensure accurate and honest valuations. With
             our commitment to integrity and sustainability, you can trust that
             you'll receive a fair value for your scrap materials when you choose
-            DIN.
+            DIN.  &nbsp;&nbsp;
             <span>
               <Link className="changepage" to="/ratelist">
                 Click here for detailed scrap ratelist.
@@ -202,7 +202,7 @@ function Home() {
               our communities. Each plant we provide is carefully selected for
               its beauty and resilience, ensuring that you receive not only a
               valuable addition to your space but also a symbol of our shared
-              dedication to a greener future.
+              dedication to a greener future.&nbsp;&nbsp;
               <span>
                 <Link className="changepage" to="/plant">
                   Check our plant list.

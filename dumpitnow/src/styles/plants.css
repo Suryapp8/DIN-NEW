@@ -1,6 +1,6 @@
 .plants-container {
-  margin-top: 4rem;
-  max-width: 1200px;
+  margin: 4rem auto;
+  max-width: 80%;
   padding: 20px;
   text-align: center;
 }
@@ -124,6 +124,34 @@ li {
 .plant-card .features-overlay {
   position: relative;
   overflow: hidden;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.search-input {
+  width: 80%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 30%;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  background-color: #44ba00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #369d00;
 }
 
 /* Mobile View */

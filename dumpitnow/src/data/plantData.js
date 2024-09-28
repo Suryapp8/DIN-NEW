@@ -15,7 +15,15 @@ import Plant14 from "../images/Plant14.jpg";
 import Plant15 from "../images/Plant15.jpg";
 import Plant16 from "../images/Plant16.jpg";
 import Plant17 from "../images/Plant17.jpg";
-// import Plant18 from "../images/Plant18.jpg";
+import Plant18 from "../images/Plant18.jpg";
+import Plant19 from "../images/Plant19.jpg";
+import Plant20 from "../images/Plant20.jpg";
+import Plant21 from "../images/Plant21.jpg";
+import Plant22 from "../images/Plant22.jpeg";
+import Plant23 from "../images/Plant23.jpg";
+import Plant24 from "../images/Plant24.jpg";
+import Plant25 from "../images/Plant25.jpg";
+import Plant26 from "../images/Plant26.jpg";
 
 const plantDetails = [
   {
@@ -214,6 +222,115 @@ const plantDetails = [
       "Asparagus good for heart health, in regulating blood sugar, Anti-aging benefits.",
     usage: "outdoor",
     image: Plant17,
+  },
+  {
+    name: "Jasminum sambac, Mogra",
+    price: "₹ 299",
+    description:
+      "Flowers make intimate connections they increase our connectivity with family and friends.",
+    sunlight: "3-6 hours of sunlight a day is ideal for flowering",
+    watering: "The soil should be well drained",
+    features:
+      "Plant is known for its heavenly fragrance especially in the evenings as the flowers open after",
+    usage: "outdoor",
+    image: Plant18,
+  },
+  {
+    name: "Parijat Tree",
+    price: "₹ 359",
+    description:
+      "A tree that seemed to possess a beauty so rare that it made you question whether it was real or your imaginatiom",
+    sunlight: "More than 6 hours of sunlight or 3-6 hours",
+    watering: "The soil should be well drained",
+    features:
+      "The Parijat tree&#39;s flowers bloom only at night and by morning, they have fallen to ground",
+    usage: "outdoor",
+    image: Plant19,
+  },
+  {
+    name: "Rose, Scented Rose",
+    price: "₹ 399",
+    description:
+      "Damascus roses are known for its distinct fragrance. Enjoy the real and oldest scent of rose.",
+    sunlight: "Full to partial sunlight",
+    watering: "Moderately",
+    features:
+      "They have been also used for commercial perfumery and commercial cut flower crops",
+    usage: "outdoor",
+    image: Plant20,
+  },
+  {
+    name: "Raat Rani, Night Blooming Jasmine",
+    price: "₹ 299",
+    description:
+      "The Raat Ki Rani belongs to the Solanaceae family. Raat ki rani is an evergreen woody shrub growing tall",
+    sunlight: "3-6 hrs of sunlight is ideal for flowering",
+    watering: "The soil should be well drained and fertile,",
+    features:
+      "Raat ki rani fragrance is heavenly especially in the night as the flowers open after sunset and the plaant is in its full beauty",
+    usage: "outdoor",
+    image: Plant21,
+  },
+  {
+    name: "Shevanti",
+    price: "₹ 259",
+    description:
+      "The most popular garden varieties are offered as cushion mums and produce dense, compact low mounds smothered with flowers.",
+    sunlight: "Shevanti plant needs full sun.",
+    watering: "Water plant once in a week.",
+    features:
+      "The plant possesses anti-inflammatory, anti-gout and anti-thrombic activity",
+    usage: "outdoor",
+    image: Plant22,
+  },
+  {
+    name: "Marigold (Orange)",
+    price: "₹ 299",
+    description:
+      "Marigold are among the very popular flowers commonly found in India and other countries.",
+    sunlight: "Marigolds need lots of sunshine",
+    watering: "Water marigolds the first 10 to 12 days after transplanting bedding plants",
+    features:
+      "In India marigold is one of the most commonly grown flowers and used extensively on religious functions",
+    usage: "outdoor",
+    image: Plant23,
+  },
+  {
+    name: "Champa (White)",
+    price: "₹ 459",
+    description:
+      "Growing Plumeria is an easy way to add a tropical flair to your garden.",
+    sunlight: "Moderate",
+    watering: "Water when top soil (1-2 inches) feels dry to touch.",
+    features:
+      "This champa plant is cultivated as an ornamental plant, as a dense screening hedge, and for its fragment",
+    usage: "outdoor",
+    image: Plant24,
+  },
+  {
+    name: "Rajnigandha",
+    price: "₹ 199",
+    description:
+      "The tuberose is a night-blooming plant native to Mexico, as is every other known species of Polianthes",
+    sunlight: "Full Sun",
+    watering: "Medium",
+    features:
+      "The plant is used for ornamental purpose",
+    usage: "outdoor",
+    image: Plant25,
+  },
+
+  {
+    name: "Fragrant Panama rose",
+    price: "₹ 279",
+    description:
+      "Panama roses are known for its distinct fragrance.",
+    sunlight: "3-6 hrs of sunlight ideal for flowering",
+    watering: "Apply 4 cup (Approx. 200 ml) water when the top soil (1-2 inch) in pot",
+    features:
+      "The plant is used for ornamental purpose and its fragnance",
+    usage: "outdoor",
+    image: Plant26,
   },
 ];
 
