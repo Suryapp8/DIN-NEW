@@ -11,8 +11,7 @@ const authToken = functions.config().twilio.token;
 const client = twilio(accountSid, authToken);
 
 // Specify the phone number to send updates to
-const notificationPhoneNumber = "+917060975127"; // Your phone number
-
+const notificationPhoneNumber = "+918604837789"; // Your phone number
 
 exports.sendOrderNotification = functions.firestore
   .document("Order-Details/{orderId}")
@@ -20,11 +19,10 @@ exports.sendOrderNotification = functions.firestore
     const orderData = snapshot.data();
     const messageBody = `New Order Received from ${orderData.user}. Pickup Time: ${orderData.pickUpTime}`;
 
-    
     return client.messages
       .create({
         body: messageBody,
-        from: functions.config().twilio.phone, 
+        from: functions.config().twilio.phone,
         to: notificationPhoneNumber,
       })
       .then((message) => {
